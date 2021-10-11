@@ -10,6 +10,8 @@ def isEven = {int i -> ! isOdd(i) }
 ```
 even/odd  
 
+` def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
+
 # Find all text files  
 
 ```groovy
