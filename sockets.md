@@ -66,17 +66,17 @@ s.close()
 ## Whois request
 
 ```groovy
-def domainName = "example.me"
-def whoisServer = "whois.nic.me"
-int port = 43
+package com.zetcode
 
-def s = new Socket(whoisServer, port)
+def hostname = "3.se.pool.ntp.org"
+int port = 13
 
-s.setSoTimeout(18000)
+def s = new Socket(hostname, port)
+s.setSoTimeout(6000)
 
 s.withStreams { sin, sout ->
 
-	sout << domainName << "\r\n"
+	sout << ""
 	
 	def text = sin.text
 	println text
