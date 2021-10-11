@@ -1,6 +1,23 @@
 # Groovy-Examples
 Groovy code examples
 
+`println System.getProperty("user.dir")` print current working directory  
+
+Find all text files  
+
+```groovy
+import static groovy.io.FileType.FILES
+
+def f = new File('/home/jano7/Documents')
+
+f.eachFileRecurse(FILES) {
+    if(it.name.endsWith('.txt')) {
+        println it
+    }
+}
+```
+
+
 ## Iterate over range of datetime values
 
 ```groovy
