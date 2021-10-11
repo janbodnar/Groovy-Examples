@@ -2,6 +2,7 @@
 Groovy code examples
 
 `println System.getProperty("user.dir")` print current working directory  
+`println "ls -la".execute().text` execute shell command  
 
 # Find all text files  
 
