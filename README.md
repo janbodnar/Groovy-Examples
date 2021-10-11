@@ -4,6 +4,12 @@ Groovy code examples
 `println System.getProperty("user.dir")` print current working directory  
 `println "ls -la".execute().text` execute shell command  
 
+```groovy
+def isOdd = { int i -> (i & 1) as boolean }
+def isEven = {int i -> ! isOdd(i) }
+```
+even/odd  
+
 # Find all text files  
 
 ```groovy
