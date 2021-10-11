@@ -3,8 +3,6 @@
 ## GET request 
 
 ```groovy
-package com.zetcode
-
 def host = "webcode.me"
 int port = 80
 
@@ -20,10 +18,29 @@ s.withStreams { sin, sout ->
 
 	def text = sin.text
 	println text
-
-
 }
 
 s.close()
+```
 
+## Whois
+
+```groovy
+def domainName = "example.me"
+def whoisServer = "whois.nic.me"
+int port = 43
+
+def s = new Socket(whoisServer, port)
+
+s.setSoTimeout(18000)
+
+s.withStreams { sin, sout ->
+
+	sout << domainName << "\r\n"
+	
+	def text = sin.text
+	println text
+}
+
+s.close()
 ```
