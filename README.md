@@ -3,7 +3,7 @@ Groovy code examples
 
 `println System.getProperty("user.dir")` print current working directory  
 
-Find all text files  
+# Find all text files  
 
 ```groovy
 import static groovy.io.FileType.FILES
@@ -16,7 +16,6 @@ f.eachFileRecurse(FILES) {
     }
 }
 ```
-The *nameFilter* is an exact match   
 
 ```groovy
 import static groovy.io.FileType.FILES
@@ -27,6 +26,8 @@ f.traverse(type: FILES, nameFilter: ~/.*.txt/) { it ->
 	println it
 }
 ```
+
+The *nameFilter* is an exact match   
 
 ## Iterate over range of datetime values
 
