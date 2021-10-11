@@ -16,7 +16,17 @@ f.eachFileRecurse(FILES) {
     }
 }
 ```
+The *nameFilter* is an exact match   
 
+```groovy
+import static groovy.io.FileType.FILES
+
+def f = new File('/home/jano7/Documents')
+
+f.traverse(type: FILES, nameFilter: ~/.*.txt/) { it ->
+	println it
+}
+```
 
 ## Iterate over range of datetime values
 
