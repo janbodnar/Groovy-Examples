@@ -26,6 +26,24 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
+Web scraping with JSoup  
+
+```groovy
+@Grab(group='org.jsoup', module='jsoup', version='1.10.1')
+import org.jsoup.Jsoup
+
+def doc = Jsoup.connect("http://webcode.me").get()
+def title = doc.select('title')
+def elements = doc.select('*')
+
+println doc
+println title
+
+elements.each { e ->
+    println e
+}
+```
+
 Read file line by line  
 
 ```groovy
