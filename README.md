@@ -119,3 +119,56 @@ now.upto(d2, ChronoUnit.DAYS) {
 	println it
 }
 ```
+
+## Jasper simple example
+
+```xml
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN"
+        "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport xmlns = "http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation = "http://jasperreports.sourceforge.net/jasperreports
+                                    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="simple" topMargin="20" bottomMargin="20">
+
+    <detail>
+        <band height="70">
+
+            <staticText>
+                <reportElement x="5" y="50" width="100" height="14"/>
+                <textElement />
+                <text><![CDATA[This is my first report!]]></text>
+            </staticText>
+
+        </band>
+    </detail>
+
+</jasperReport>
+```
+`simple.jrxml` file  
+
+```groovy
+package com.zetcode
+
+@Grab(group='net.sf.jasperreports', module='jasperreports', version='6.17.0')
+
+import net.sf.jasperreports.engine.*
+
+import java.util.Date
+import java.util.HashMap
+
+def xmlFile = 'simple.jrxml'
+
+jreport = JasperCompileManager.compileReport(xmlFile)
+
+params = [:]
+
+jsPrint = JasperFillManager.fillReport(jreport, params,
+        new JREmptyDataSource())
+
+JasperExportManager.exportReportToPdfFile(jsPrint, 'simple.pdf')
+```
+
+`report2.gvy` file  
