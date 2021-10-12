@@ -155,12 +155,10 @@ now.upto(d2, ChronoUnit.DAYS) {
 import net.sf.jasperreports.engine.*
 
 def xmlFile = 'simple.jrxml'
+def jreport = JasperCompileManager.compileReport(xmlFile)
 
-jreport = JasperCompileManager.compileReport(xmlFile)
-
-params = [:]
-
-jsPrint = JasperFillManager.fillReport(jreport, params,
+def params = [:]
+def jsPrint = JasperFillManager.fillReport(jreport, params,
         new JREmptyDataSource())
 
 JasperExportManager.exportReportToPdfFile(jsPrint, 'simple.pdf')
