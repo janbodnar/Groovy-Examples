@@ -22,6 +22,25 @@ fname.eachLine { ln, n ->
 }
 ```
 
+Fetch all rows from db  
+
+```groovy
+@Grab(group='org.postgresql', module='postgresql', version='42.2.24')
+@GrabConfig(systemClassLoader=true)
+
+import groovy.sql.Sql
+
+def url = 'jdbc:postgresql://localhost:5432/testdb'
+def user = 'postgres'
+def password = ''
+def driver = 'org.postgresql.Driver'
+
+Sql.withInstance(url, user, password, driver) { sql ->
+
+    def res = sql.rows('SELECT * FROM cars')
+    println res
+}
+```
 # Find all text files  
 
 ```groovy
