@@ -156,9 +156,6 @@ package com.zetcode
 
 import net.sf.jasperreports.engine.*
 
-import java.util.Date
-import java.util.HashMap
-
 def xmlFile = 'simple.jrxml'
 
 jreport = JasperCompileManager.compileReport(xmlFile)
