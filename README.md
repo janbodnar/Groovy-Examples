@@ -12,6 +12,16 @@ even/odd
 
 ` def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
+Read file line by line  
+
+```groovy
+def fname = new File("words.txt")
+
+fname.eachLine { ln, n ->
+    println "line $n: $ln"
+}
+```
+
 # Find all text files  
 
 ```groovy
