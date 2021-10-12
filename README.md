@@ -150,8 +150,6 @@ now.upto(d2, ChronoUnit.DAYS) {
 `simple.jrxml` file  
 
 ```groovy
-package com.zetcode
-
 @Grab(group='net.sf.jasperreports', module='jasperreports', version='6.17.0')
 
 import net.sf.jasperreports.engine.*
