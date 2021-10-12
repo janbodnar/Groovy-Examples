@@ -10,7 +10,21 @@ def isEven = {int i -> ! isOdd(i) }
 ```
 even/odd  
 
-` def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
+`def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
+
+grepping/filtering  
+
+```groovy
+def res = [1, 15, 16, 30, 12].grep(12..18)
+println res
+
+def res2 = [1, 2, -1, 0, 2, 3, -3, 4].grep({it > 0})
+println res2
+
+def words = ['sky', 'cloud', 'war', 'wasp', 'water', 'coin']
+def res3 = words.grep(~/.../)
+println res3
+```
 
 Read file line by line  
 
