@@ -202,15 +202,15 @@ def createDataset() {
 
 def createChart(dataset){
 
-        def chart = ChartFactory.createLineChart(
-            "Java Standard Class Library", // chart title
-            "Release", // domain axis label
-            "Class Count", // range axis label
-            dataset, // data
-            PlotOrientation.VERTICAL, // orientation
-            false, // include legend
-            true, // tooltips
-            false // urls
+    def chart = ChartFactory.createLineChart(
+        "Java Standard Class Library", // chart title
+	"Release", // domain axis label
+	"Class Count", // range axis label
+	dataset, // data
+	PlotOrientation.VERTICAL, // orientation
+	false, // include legend
+	true, // tooltips
+	false // urls
     )
     
     return chart
@@ -236,45 +236,45 @@ import java.awt.EventQueue
 
 class QuitButtonEx extends JFrame {
 
-	QuitButtonEx() {
+    QuitButtonEx() {
 
-		initUI()
-	}
+        initUI()
+    }
 
-	def initUI() {
+    def initUI() {
 
-		def quitButton = new JButton("Quit")
-		quitButton.addActionListener { e -> System.exit(0) }
+        def quitButton = new JButton("Quit")
+        quitButton.addActionListener { e -> System.exit(0) }
 
-		createLayout(quitButton)
+        createLayout(quitButton)
 
-		setTitle("Quit button")
-		setSize(350, 250)
-		setLocationRelativeTo(null)
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
+        setTitle("Quit button")
+        setSize(350, 250)
+        setLocationRelativeTo(null)
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
 
-	private void createLayout(JComponent... arg) {
+    private void createLayout(JComponent... arg) {
 
-		def pane = getContentPane()
-		def gl = new GroupLayout(pane)
-		pane.setLayout(gl)
+        def pane = getContentPane()
+        def gl = new GroupLayout(pane)
+        pane.setLayout(gl)
 
-		gl.setAutoCreateContainerGaps(true)
+        gl.setAutoCreateContainerGaps(true)
 
-		gl.setHorizontalGroup(gl.createSequentialGroup()
-				.addComponent(arg[0]))
+        gl.setHorizontalGroup(gl.createSequentialGroup()
+                .addComponent(arg[0]))
 
-		gl.setVerticalGroup(gl.createSequentialGroup()
-				.addComponent(arg[0]))
-	}
+        gl.setVerticalGroup(gl.createSequentialGroup()
+                .addComponent(arg[0]))
+    }
 }
 
 
 EventQueue.invokeLater {
 
-	def ex = new QuitButtonEx()
-	ex.setVisible(true)
+    def ex = new QuitButtonEx()
+    ex.setVisible(true)
 }
 ```
 
