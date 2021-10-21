@@ -26,6 +26,14 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
+## Iterate over lines of URL
+
+```groovy
+def url = new URL("http://www.webcode.me")
+
+url.eachLine { println it }
+```
+
 ## Socket HEAD/GET request
 
 ```groovy
