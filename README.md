@@ -26,7 +26,7 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
-## Socket HEAD request
+## Socket HEAD/GET request
 
 ```groovy
 def s = new Socket("webcode.me", 80);
@@ -44,6 +44,24 @@ s.withStreams { sin, sout ->
 }
 ```
 
+```groovy
+def host = "webcode.me"
+int port = 80
+
+def s = new Socket(host, port)
+
+s.setSoTimeout(18000)
+
+s.withStreams { sin, sout ->
+
+    sout << "GET / HTTP/1.1\r\n"
+    sout << "Connection: close\r\n"
+    sout << "Host: www.webcode.me\r\n\r\n"
+
+    def text = sin.text
+    println text
+}
+```
 
 ## Web scraping with JSoup  
 
