@@ -221,6 +221,64 @@ def chart = getChart()
 ChartUtils.saveChartAsPNG(new File("mychart.png"), chart, 450, 400);
 ```
 
+## Swing examples 
+
+The first example uses Swing directly, without the builder.
+
+```groovy
+package com.zetcode
+
+import javax.swing.GroupLayout
+import javax.swing.JButton
+import javax.swing.JComponent
+import javax.swing.JFrame
+import java.awt.EventQueue
+
+class QuitButtonEx extends JFrame {
+
+	QuitButtonEx() {
+
+		initUI()
+	}
+
+	def initUI() {
+
+		def quitButton = new JButton("Quit")
+		quitButton.addActionListener { e -> System.exit(0) }
+
+		createLayout(quitButton)
+
+		setTitle("Quit button")
+		setSize(350, 250)
+		setLocationRelativeTo(null)
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	private void createLayout(JComponent... arg) {
+
+		def pane = getContentPane()
+		def gl = new GroupLayout(pane)
+		pane.setLayout(gl)
+
+		gl.setAutoCreateContainerGaps(true)
+
+		gl.setHorizontalGroup(gl.createSequentialGroup()
+				.addComponent(arg[0]))
+
+		gl.setVerticalGroup(gl.createSequentialGroup()
+				.addComponent(arg[0]))
+	}
+}
+
+
+EventQueue.invokeLater {
+
+	def ex = new QuitButtonEx()
+	ex.setVisible(true)
+}
+```
+
+
 ## JasperReports simple example
 
 ```xml
