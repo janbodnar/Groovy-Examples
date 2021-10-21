@@ -26,7 +26,26 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
-Web scraping with JSoup  
+## Socket HEAD request
+
+```groovy
+def s = new Socket("webcode.me", 80);
+
+s.withStreams { sin, sout ->
+  
+  sout << "HEAD / HTTP/1.1\r\nConnection: close\r\nHost: webcode.me\r\nAccept: text/html\r\n\r\n" 
+  
+  def reader = sin.newReader()
+  def lines = reader.readLines()
+  
+  for (line in lines) {
+      println line
+  }
+}
+```
+
+
+## Web scraping with JSoup  
 
 ```groovy
 @Grab(group='org.jsoup', module='jsoup', version='1.10.1')
@@ -44,7 +63,7 @@ elements.each { e ->
 }
 ```
 
-Read file line by line  
+## Read file line by line  
 
 ```groovy
 def fname = new File("words.txt")
@@ -54,7 +73,7 @@ fname.eachLine { ln, n ->
 }
 ```
 
-Fetch all rows from db  
+## Fetch all rows from db  
 
 ```groovy
 @Grab(group='org.postgresql', module='postgresql', version='42.2.24')
@@ -73,7 +92,7 @@ Sql.withInstance(url, user, password, driver) { sql ->
     println res
 }
 ```
-# Find all text files  
+## Find all text files  
 
 ```groovy
 import static groovy.io.FileType.FILES
