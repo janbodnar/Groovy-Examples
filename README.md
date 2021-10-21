@@ -118,6 +118,7 @@ Sql.withInstance(url, user, password, driver) { sql ->
     println res
 }
 ```
+
 ## Find all text files  
 
 ```groovy
@@ -204,14 +205,14 @@ def createChart(dataset){
 
     def chart = ChartFactory.createLineChart(
         "Java Standard Class Library", // chart title
-	"Release", // domain axis label
-	"Class Count", // range axis label
-	dataset, // data
-	PlotOrientation.VERTICAL, // orientation
-	false, // include legend
-	true, // tooltips
-	false // urls
-    )
+        "Release", // domain axis label
+        "Class Count", // range axis label
+        dataset, // data
+        PlotOrientation.VERTICAL, // orientation
+        false, // include legend
+        true, // tooltips
+        false // urls
+        )
     
     return chart
 }
