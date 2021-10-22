@@ -222,7 +222,61 @@ def chart = getChart()
 ChartUtils.saveChartAsPNG(new File("mychart.png"), chart, 450, 400);
 ```
 
-## Swing examples 
+## TableSaw dataframe 
+
+```groovy
+package com.zetcode
+
+@Grab(group='tech.tablesaw', module='tablesaw-core', version='0.41.0')
+@Grab(group='org.slf4j', module='slf4j-simple', version='1.7.32', scope='test')
+
+import tech.tablesaw.api.Table
+import static tech.tablesaw.aggregate.AggregateFunctions.max
+import static tech.tablesaw.aggregate.AggregateFunctions.max
+import static tech.tablesaw.aggregate.AggregateFunctions.mean
+import static tech.tablesaw.aggregate.AggregateFunctions.median
+import static tech.tablesaw.aggregate.AggregateFunctions.count
+
+def tbl = Table.read().csv("src/resources/cars.csv")
+
+println tbl.shape()
+println '---------------------------'
+
+println tbl.structure()
+println '---------------------------'
+
+println tbl.first(3)
+println '---------------------------'
+
+println tbl.last(2)
+println '---------------------------'
+
+println tbl.column('price').min()
+println tbl.column('price').max()
+println tbl.column('price').asList()
+
+println tbl.where { it.numberColumn(2).isGreaterThan(50_000) }
+println tbl.where { it.numberColumn(2).isLessThan(25_000) }.rowCount()
+
+println '---------------------------'
+
+def price = tbl.nCol('price')
+println tbl.summarize(price, count, max, min, mean, median).apply()
+
+println '---------------------------'
+
+println tbl.select("name", "price")
+
+
+println '---------------------------'
+println tbl.sampleN(4)
+
+println '---------------------------'
+
+println tbl.sortAscendingOn("price")
+```
+
+## Swing example
 
 The first example uses Swing directly, without the builder.
 
