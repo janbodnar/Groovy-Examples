@@ -125,6 +125,53 @@ for (line in lines) {
 ```
 reads CSV file with OpenCSV library
 
+## Convert CSV file to HTML table
+
+```groovy
+package com.zetcode
+
+@Grab(group='org.codehaus.groovy', module='groovy-xml', version='3.0.9')
+@Grab(group='com.opencsv', module='opencsv', version='5.5.2')
+
+import java.nio.file.Files
+import java.nio.file.Paths
+import com.opencsv.CSVParserBuilder
+import com.opencsv.CSVReaderBuilder
+import groovy.xml.MarkupBuilder
+
+def fname = 'cars.csv'
+def br = Files.newBufferedReader(Paths.get(fname))
+
+def parser = new CSVParserBuilder().withSeparator(',' as char).build()
+def reader = new CSVReaderBuilder(br).withCSVParser(parser).build()
+
+def lines = reader.readAll()
+
+def buildTable(rows, n) {
+    
+    def sw = new StringWriter()
+    
+    new MarkupBuilder(sw).table() {
+        thead {
+            tr {
+                rows[0].each { f -> th(f)}
+            }
+        } 
+        tbody {
+            (1..n).each { row ->
+                tr {
+                    rows[row].each { f -> td(f) }
+                }
+            }
+        }
+    }
+    
+    sw.toString()
+}
+
+println buildTable(lines.toList(), lines.size()-1)
+```
+
 
 ## Iterate over lines of URL
 
