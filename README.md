@@ -45,6 +45,17 @@ def gcd(a,b) {
 ```
 Custom GCD with recursion
 
+## Process
+
+```groovy
+def process = "ls -l".execute()
+
+process.in.eachLine { line ->
+    println line
+}
+```
+Runs external program
+
 ## Grouping
 
 ```groovy
