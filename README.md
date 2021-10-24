@@ -26,6 +26,17 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
+## Find GCD from the max & min in a list 
+
+```groovy
+def vals = [8, 5, 10]
+
+def min = vals.min() as BigInteger
+def max = vals.max() as BigInteger
+
+println min.gcd(max)
+```
+
 ## Iterate over lines of URL
 
 ```groovy
