@@ -108,9 +108,8 @@ Using BigInteger literals
 
 import java.nio.file.Files
 import java.nio.file.Paths
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReaderBuilder;
+import com.opencsv.CSVParserBuilder
+import com.opencsv.CSVReaderBuilder
 
 def fname = 'src/resources/cars.csv'
 def br = Files.newBufferedReader(Paths.get(fname))
@@ -121,7 +120,7 @@ def reader = new CSVReaderBuilder(br).withCSVParser(parser).build()
 def lines = reader.readAll()
 
 for (line in lines) {
-	println line.join(" ")
+    println line.join(" ")
 }
 ```
 reads CSV file with OpenCSV library
