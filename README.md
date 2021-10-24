@@ -106,12 +106,14 @@ Using BigInteger literals
 ```groovy
 @Grab(group='com.opencsv', module='opencsv', version='5.5.2')
 
-import com.opencsv.CSVParserBuilder
-import com.opencsv.CSVReaderBuilder
+import java.nio.file.Files
+import java.nio.file.Paths
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReaderBuilder;
 
-def fname = 'cars.csv'
-def rdr = new File(fname).newReader()
-def br = new BufferedReader(rdr)
+def fname = 'src/resources/cars.csv'
+def br = Files.newBufferedReader(Paths.get(fname))
 
 def parser = new CSVParserBuilder().withSeparator(',' as char).build()
 def reader = new CSVReaderBuilder(br).withCSVParser(parser).build()
@@ -119,7 +121,7 @@ def reader = new CSVReaderBuilder(br).withCSVParser(parser).build()
 def lines = reader.readAll()
 
 for (line in lines) {
-    println line.join(" ")
+	println line.join(" ")
 }
 ```
 reads CSV file with OpenCSV library
