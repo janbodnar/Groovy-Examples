@@ -34,6 +34,39 @@ def gcd(a,b) {
 ```
 Custom GCD with recursion
 
+## Grouping
+
+```groovy
+import java.time.LocalDate
+import groovy.transform.Immutable
+
+@Immutable
+class User {
+    String name
+    String occupation
+    LocalDate dob
+}
+ 
+def users = [
+
+    new User(name:'John Doe', occupation: 'gardener',   dob: LocalDate.parse('1973-09-07', 'yyyy-MM-dd')),
+    new User(name:'Roger Roe',    occupation: 'driver',  dob: LocalDate.parse('1963-03-30', 'yyyy-MM-dd')),
+    new User(name:'Kim Smith',  occupation: 'teacher', dob: LocalDate.parse('1980-05-12', 'yyyy-MM-dd')),
+    new User(name:'Joe Nigel',    occupation: 'artist', dob: LocalDate.parse('1983-03-30', 'yyyy-MM-dd')),
+    new User(name:'Liam Strong',   occupation: 'teacher',   dob: LocalDate.parse('2009-03-06', 'yyyy-MM-dd')),
+    new User(name:'Robert Young',   occupation: 'gardener',   dob: LocalDate.parse('1978-11-16', 'yyyy-MM-dd')),
+    new User(name:'Liam Strong',   occupation: 'teacher',   dob: LocalDate.parse('1986-10-23', 'yyyy-MM-dd'))
+]
+ 
+def res = users.groupBy({ it.occupation })
+
+for (e in res) {
+    println e
+}
+```
+
+Group data by occupation
+
 ## Find GCD from the max & min in a list 
 
 ```groovy
