@@ -15,7 +15,7 @@ even/odd
 append to file  
 
 ```groovy
-def fname = 'src/resources/words.txt'
+def fname = 'words.txt'
 def f = new File(fname)
 
 f.withWriterAppend('utf-8') {
