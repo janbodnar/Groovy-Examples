@@ -187,6 +187,8 @@ println res
 ```
 filter lines; include only that start with 'w'
 
+---
+
 ```groovy
 def fname = 'words.txt'
 def f = new File(fname)
@@ -194,6 +196,20 @@ def f = new File(fname)
 println f.text 
 ```
 read contents
+
+---
+
+```groovy
+def fname = 'words.txt'
+def f = new File(fname)
+
+// def lines = f as String[]
+// println lines
+
+def lines = f.readLines()
+println lines
+```
+read lines into list
 
 ---
 
