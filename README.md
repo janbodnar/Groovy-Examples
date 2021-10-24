@@ -179,6 +179,25 @@ Read file line by line
 ---
 
 ```groovy
+def fname = 'src/resources/words.txt'
+def f = new File(fname)
+
+def res = f.filterLine { it =~ /^w.*/ }
+println res
+```
+filter lines; include only that start with 'w'
+
+```groovy
+def fname = 'words.txt'
+def f = new File(fname)
+
+println f.text 
+```
+read contents
+
+---
+
+```groovy
 def fname = 'words.txt'
 def f = new File(fname)
 
