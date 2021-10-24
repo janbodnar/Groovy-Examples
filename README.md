@@ -26,6 +26,14 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
+```groovy
+def gcd(a,b) {
+  if (!b) a
+  else gcd(b, a%b)
+}
+```
+Custom GCD with recursion
+
 ## Find GCD from the max & min in a list 
 
 ```groovy
