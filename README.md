@@ -12,16 +12,6 @@ even/odd
 
 `def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
-append to file  
-
-```groovy
-def fname = 'words.txt'
-def f = new File(fname)
-
-f.withWriterAppend('utf-8') {
-	writer -> writer.append('falcon\n').append('owl')
-}
-```
 
 grepping/filtering  
 
@@ -175,15 +165,28 @@ elements.each { e ->
 }
 ```
 
-## Read file line by line  
+## Files
 
 ```groovy
-def fname = new File("words.txt")
+def f = new File("words.txt")
 
-fname.eachLine { ln, n ->
+f.eachLine { ln, n ->
     println "line $n: $ln"
 }
 ```
+Read file line by line
+
+---
+
+```groovy
+def fname = 'words.txt'
+def f = new File(fname)
+
+f.withWriterAppend('utf-8') {
+	writer -> writer.append('falcon\n').append('owl')
+}
+```
+append to file  
 
 ## Fetch all rows from db  
 
