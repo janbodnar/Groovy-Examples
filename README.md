@@ -36,6 +36,18 @@ def max = vals.max() as BigInteger
 
 println min.gcd(max)
 ```
+Casting to BigInteger
+
+```groovy
+def vals = [8g, 5g, 10g]
+
+def min = vals.min()
+def max = vals.max()
+
+println min.gcd(max)
+```
+Using BigInteger literals
+
 
 ## Iterate over lines of URL
 
