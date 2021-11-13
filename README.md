@@ -294,6 +294,40 @@ f.withWriterAppend('utf-8') {
 ```
 append to file  
 
+## Working with H2 in-memory database
+
+```groovy
+@GrabConfig(systemClassLoader=true)
+@Grab(group='com.h2database', module='h2', version='1.4.200')
+
+import groovy.sql.Sql
+
+def createTable = '''
+CREATE TABLE cars(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255), price INT);
+INSERT INTO cars(name, price) VALUES('Audi', 52642);
+INSERT INTO cars(name, price) VALUES('Mercedes', 57127);
+INSERT INTO cars(name, price) VALUES('Skoda', 9000);
+INSERT INTO cars(name, price) VALUES('Volvo', 29000);
+INSERT INTO cars(name, price) VALUES('Bentley', 350000);
+INSERT INTO cars(name, price) VALUES('Citroen', 21000);
+INSERT INTO cars(name, price) VALUES('Hummer', 41400);
+INSERT INTO cars(name, price) VALUES('Volkswagen', 21600);
+'''
+
+def url = "jdbc:h2:mem:"
+def sql = Sql.withInstance(url) { sql ->
+
+    sql.execute("DROP TABLE IF EXISTS cars")
+    sql.execute(createTable)
+
+    def query = "SELECT * FROM cars"
+
+    sql.eachRow(query) { row ->
+      println "$row.id  ${row.name} $row.price"
+    }
+}
+```
+
 ## Fetch all rows from db  
 
 ```groovy
