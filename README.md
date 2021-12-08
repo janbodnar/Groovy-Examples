@@ -35,6 +35,17 @@ def gcd(a,b) {
 ```
 Custom GCD with recursion
 
+## Filter lines
+
+```groovy
+def fname = 'words.txt'
+def f = new File(fname)
+
+// def res = f.filterLine { it =~ /^w.*/ }
+def res = f.filterLine { it =~ /^w.*/ }
+println res
+```
+
 ## Process
 
 ```groovy
