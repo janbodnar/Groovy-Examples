@@ -195,7 +195,7 @@ url.eachLine { println it }
 ## Socket HEAD/GET request
 
 ```groovy
-def s = new Socket("webcode.me", 80);
+def s = new Socket("webcode.me", 80)
 
 s.withStreams { sin, sout ->
   
@@ -430,13 +430,13 @@ def getChart() {
 
 def createDataset() {
 
-    def dataset = new DefaultCategoryDataset();
+    def dataset = new DefaultCategoryDataset()
 
-    dataset.addValue(212, "Classes", "JDK 1.0");
-    dataset.addValue(504, "Classes", "JDK 1.1");
-    dataset.addValue(1520, "Classes", "SDK 1.2");
-    dataset.addValue(1842, "Classes", "SDK 1.3");
-    dataset.addValue(2991, "Classes", "SDK 1.4");
+    dataset.addValue(212, "Classes", "JDK 1.0")
+    dataset.addValue(504, "Classes", "JDK 1.1")
+    dataset.addValue(1520, "Classes", "SDK 1.2")
+    dataset.addValue(1842, "Classes", "SDK 1.3")
+    dataset.addValue(2991, "Classes", "SDK 1.4")
 
     return dataset
 }
@@ -459,7 +459,7 @@ def createChart(dataset){
 
 def chart = getChart()
 
-ChartUtils.saveChartAsPNG(new File("mychart.png"), chart, 450, 400);
+ChartUtils.saveChartAsPNG(new File("mychart.png"), chart, 450, 400)
 ```
 
 ## TableSaw dataframe 
@@ -546,7 +546,7 @@ class QuitButtonEx extends JFrame {
         setTitle("Quit button")
         setSize(350, 250)
         setLocationRelativeTo(null)
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE)
     }
 
     private void createLayout(JComponent... arg) {
