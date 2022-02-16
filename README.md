@@ -12,8 +12,29 @@ even/odd
 
 `def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
+## Ranges 
 
-grepping/filtering  
+```groovy
+
+def vals = 1..10
+println vals.toList()
+
+def vals2 = 1..<10
+println vals2.toList()
+
+def vals3 = 1<..<10
+println vals3.toList()
+
+def chars = 'a'..'z'
+println chars 
+println chars.size()
+println chars.contains('c')
+println chars.getFrom() 
+println chars.getTo()
+```
+
+
+## grepping/filtering  
 
 ```groovy
 def res = [1, 15, 16, 30, 12].grep(12..18)
