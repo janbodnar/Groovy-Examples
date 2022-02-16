@@ -15,15 +15,26 @@ even/odd
 ## Ranges 
 
 ```groovy
+import java.time.LocalDate
+import java.time.Month
 
 def vals = 1..10
+println vals.from
+println vals.to
 println vals.toList()
 
-def vals2 = 1..<10
-println vals2.toList()
+def vals2 = (1..7).step(2)
+println vals2
+// reverse range
+def vals3 = 10..1
+println vals3
 
-def vals3 = 1<..<10
-println vals3.toList()
+// exclusive ranges
+def vals4 = 1..<10
+println vals4.toList()
+
+def vals5 = 1<..<10
+println vals5.toList()
 
 def chars = 'a'..'z'
 println chars 
@@ -31,6 +42,21 @@ println chars.size()
 println chars.contains('c')
 println chars.getFrom() 
 println chars.getTo()
+
+// date & time 
+def months = Month.JANUARY..Month.DECEMBER
+
+for (def m in months) {
+
+    println m
+}
+
+def days = LocalDate.now()..LocalDate.now().plusDays(17)
+
+for (def d in days) {
+    
+    println d
+}
 ```
 
 
