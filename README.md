@@ -23,8 +23,10 @@ println vals.from
 println vals.to
 println vals.toList()
 
+// steps
 def vals2 = (1..7).step(2)
 println vals2
+
 // reverse range
 def vals3 = 10..1
 println vals3
