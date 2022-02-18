@@ -262,6 +262,58 @@ def buildTable(rows, n) {
 println buildTable(lines.toList(), lines.size()-1)
 ```
 
+## Parse XML
+
+```groovy
+import groovy.xml.XmlSlurper
+
+def data = '''<?xml version="1.0" encoding="utf-8"?>
+<products>
+    <product>
+        <id>1</id>
+        <name>Product A</name>
+        <price>780</price>
+    </product>
+
+    <product>
+        <id>2</id>
+        <name>Product B</name>
+        <price>1100</price>
+    </product>
+
+    <product>
+        <id>3</id>
+        <name>Product C</name>
+        <price>1050</price>
+    </product>
+
+    <product>
+        <id>4</id>
+        <name>Product D</name>
+        <price>950</price>
+    </product>
+</products>
+'''
+
+def products = new XmlSlurper().parseText(data)
+
+def id1 = products.product[0].id
+def name1 = products.product[0].name
+def price1 = products.product[0].price
+
+println "$id1 $name1 $price1"
+
+def names = products.'**'.findAll { node -> node.name() == 'name' }*.text()
+println names
+
+def prices = products.product.'*'.find { node ->
+
+    node.name() == 'price' && node.text() as Integer < 1000
+}
+
+print prices
+```
+
 
 ## Iterate over lines of URL
 
