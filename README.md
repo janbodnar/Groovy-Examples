@@ -709,7 +709,7 @@ EventQueue.invokeLater {
 Send test email to Mailtrap service  
 
 ```groovy
-@Grab(group='com.sun.mail', module='jakarta.mail', version='2.0.1'),
+@Grab(group='com.sun.mail', module='jakarta.mail', version='2.0.1')
 @Grab(group='com.sun.activation', module='jakarta.activation', version='2.0.1')
 
 import java.util.Properties
