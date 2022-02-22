@@ -726,8 +726,8 @@ import jakarta.mail.internet.MimeMessage
 def to = "test@example.com"
 
 def from = "from@example.com"
-def username = "9c1d45eaf7af5b"
-def password = "ad62926fa75d0f"
+def username = "username" // get from mailtrap
+def password = "passdw" // get from mailtrap
 
 def host = "smtp.mailtrap.io"
 
