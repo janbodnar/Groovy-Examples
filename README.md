@@ -758,8 +758,37 @@ Transport.send(message)
 println("Email sent successfully")
 ```
 
+---
 
+Send test mail with `simple-java-mail` library  
 
+```groovy
+@Grab(group='org.simplejavamail', module='simple-java-mail', version='7.1.0')
+
+import org.simplejavamail.api.email.Email
+import org.simplejavamail.email.EmailBuilder
+import org.simplejavamail.mailer.MailerBuilder
+
+def username = "9c1d45eaf7af5b"
+def password = "ad62926fa75d0f"
+def host = "smtp.mailtrap.io"
+def port = 2525;
+
+Email email = EmailBuilder.startingBlank()
+    .from("John Doe", "john.doe@example.com")
+    .to("Jane Doe", "jane.doe@example.com")
+    .to("Peter Doe", "peter.doe@example.com")
+    .withSubject("Test subject")
+    .withPlainText("Test body")
+    .buildEmail();
+
+MailerBuilder
+    .withSMTPServer(host, port, username, password)
+    .buildMailer()
+    .sendMail(email);
+
+println("Email sent successfully")
+```
 
 
 ## JasperReports simple example
