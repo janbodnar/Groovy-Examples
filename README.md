@@ -726,15 +726,15 @@ import jakarta.mail.internet.MimeMessage
 def to = "test@example.com"
 
 def from = "from@example.com"
-def username = "username" // get from mailtrap
-def password = "passdw" // get from mailtrap
+def username = "username" // get from Mailtrap
+def password = "passdw" // get from Mailtrap
 
 def host = "smtp.mailtrap.io"
 
 def props = new Properties()
 
 props.put("mail.smtp.auth", "true")
-props.put("mail.smtp.starttls.enable", "true") // it's optional in Mailtrap
+props.put("mail.smtp.starttls.enable", "true") // optional in Mailtrap
 props.put("mail.smtp.host", host)
 props.put("mail.smtp.port", "2525")
 
