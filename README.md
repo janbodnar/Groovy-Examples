@@ -769,8 +769,8 @@ import org.simplejavamail.api.email.Email
 import org.simplejavamail.email.EmailBuilder
 import org.simplejavamail.mailer.MailerBuilder
 
-def username = "9c1d45eaf7af5b"
-def password = "ad62926fa75d0f"
+def username = "username" // get from Mailtrap
+def password = "password" // get from Mailtrap
 def host = "smtp.mailtrap.io"
 def port = 2525;
 
