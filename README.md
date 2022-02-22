@@ -704,6 +704,63 @@ EventQueue.invokeLater {
 }
 ```
 
+## Send test email
+
+Send test email to Mailtrap service  
+
+```groovy
+@Grab(group='com.sun.mail', module='jakarta.mail', version='2.0.1'),
+@Grab(group='com.sun.activation', module='jakarta.activation', version='2.0.1')
+
+import java.util.Properties
+
+import jakarta.mail.Authenticator
+import jakarta.mail.Message
+import jakarta.mail.MessagingException
+import jakarta.mail.PasswordAuthentication
+import jakarta.mail.Session
+import jakarta.mail.Transport
+import jakarta.mail.internet.InternetAddress
+import jakarta.mail.internet.MimeMessage
+
+def to = "test@example.com"
+
+def from = "from@example.com"
+def username = "9c1d45eaf7af5b"
+def password = "ad62926fa75d0f"
+
+def host = "smtp.mailtrap.io"
+
+def props = new Properties()
+
+props.put("mail.smtp.auth", "true")
+props.put("mail.smtp.starttls.enable", "true") // it's optional in Mailtrap
+props.put("mail.smtp.host", host)
+props.put("mail.smtp.port", "2525")
+
+def auth = new Authenticator() {
+    protected PasswordAuthentication getPasswordAuthentication() {
+        return new PasswordAuthentication(username, password)
+    }
+}
+
+def session = Session.getInstance(props, auth)
+def message = new MimeMessage(session)
+
+message.setFrom(new InternetAddress(from))
+message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to))
+
+message.setSubject("Groovy email")
+message.setText("Test message")
+
+Transport.send(message)
+
+println("Email sent successfully")
+```
+
+
+
+
 
 ## JasperReports simple example
 
