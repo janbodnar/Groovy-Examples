@@ -704,6 +704,26 @@ EventQueue.invokeLater {
 }
 ```
 
+## Playwright  
+
+Browser automation with Playwright  
+
+```groovy
+@Grab(group='com.microsoft.playwright', module='playwright', version='1.19.0')
+
+import com.microsoft.playwright.Playwright
+
+Playwright.create().withCloseable { client -> 
+
+    def browser = client.chromium().launch()
+
+    def page = browser.newPage()
+
+    page.navigate("http://webcode.me")
+    println page.title()
+}
+```
+
 ## Send test email
 
 Send test email to Mailtrap service  
