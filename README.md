@@ -114,6 +114,7 @@ println c1.execute().text
 println "--------------------------------"
 println c2.execute().text
 ```
+Runs Perl one liners  
 
 ## Grouping
 
