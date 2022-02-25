@@ -106,6 +106,15 @@ process.in.eachLine { line ->
 ```
 Runs external program
 
+```groovy
+def c1 = "perl --version"
+def c2 = "perl -e 'system(\"echo Hello there!\")'"
+
+println c1.execute().text
+println "--------------------------------"
+println c2.execute().text
+```
+
 ## Grouping
 
 ```groovy
