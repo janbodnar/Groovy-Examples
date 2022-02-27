@@ -1,5 +1,25 @@
 # Groovy HttpClient examples 
 
+## Status 
+
+```groovy
+import java.net.URI
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+
+def client = HttpClient.newHttpClient()
+def request = HttpRequest.newBuilder()
+        .uri(URI.create("http://webcode.me"))
+        .GET() // GET is default
+        .build()
+
+HttpResponse<Void> res = client.send(request,
+        HttpResponse.BodyHandlers.discarding())
+
+println res.statusCode()
+```
+
 ## Simple GET request
 
 ```groovy
