@@ -102,3 +102,29 @@ for (user: users)
 ```
 
 Get and process JSON resource
+
+## Proxy
+
+```groovy
+import java.net.URI
+import java.net.ProxySelector
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+
+def port = 7878
+def url = "http://webcode.me"
+def proxy = '143.208.200.26'
+
+def client = HttpClient.newBuilder()
+        .version(HttpClient.Version.HTTP_2)
+        .proxy(ProxySelector.of(new InetSocketAddress(proxy, port)))
+        .build()
+
+def req = HttpRequest.newBuilder()
+        .uri(URI.create(url))
+        .build()
+
+def res = client.send(req, HttpResponse.BodyHandlers.ofString())
+println res.body()
+```
