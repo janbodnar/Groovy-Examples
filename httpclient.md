@@ -20,7 +20,7 @@ HttpResponse<Void> res = client.send(request,
 println res.statusCode()
 ```
 
-## Simple GET request
+## GET request
 
 ```groovy
 import java.net.URI
@@ -148,3 +148,73 @@ def req = HttpRequest.newBuilder()
 def res = client.send(req, HttpResponse.BodyHandlers.ofString())
 println res.body()
 ```
+
+## Multiple async requests
+
+```groovy
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+
+int nThreads = 30
+
+def executor = Executors.newFixedThreadPool(nThreads)
+
+def urls = [
+    "https://crunchify.com",
+    "https://yahoo.com",
+    "https://www.ebay.com",
+    "https://google.com",
+    "https://www.example.co",
+    "https://paypal.com",
+    "http://bing.com/",
+    "https://techcrunch.com/",
+    "http://mashable.com/",
+    "https://pro.crunchify.com/",
+    "https://wordpress.com/",
+    "https://wordpress.org/",
+    "https://example.com/",
+    "https://sjsu.edu/",
+    "https://ask.crunchify.com/",
+    "https://test.com.au/",
+    "https://www.wikipedia.org/",
+    "https://en.wikipedia.org"
+]
+
+for (String url in urls ) {
+
+    executor.execute(() -> {
+
+        worker(url)
+
+        // try {
+        //     worker(url)
+        // } catch (Exception e) {
+        //     e.printStackTrace()
+        // }
+
+    })
+}
+
+executor.shutdown()
+
+executor.awaitTermination(30, TimeUnit.SECONDS)
+println("finished")
+
+def worker(url) {
+
+    def client = HttpClient.newHttpClient()
+    def request = HttpRequest.newBuilder()
+        .uri(URI.create(url))
+        .build()
+
+    HttpResponse<Void> res = client.send(request,
+            HttpResponse.BodyHandlers.discarding())
+
+    println "${url}: ${res.statusCode()}"
+}
+```
+
