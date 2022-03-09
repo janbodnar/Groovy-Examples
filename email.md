@@ -55,7 +55,7 @@ def to = "test@example.com"
 
 def from = "from@example.com"
 def username = "username" // get from Mailtrap
-def password = "passdw" // get from Mailtrap
+def password = "password" // get from Mailtrap
 
 def host = "smtp.mailtrap.io"
 
@@ -99,8 +99,8 @@ import jakarta.mail.Message
 import jakarta.mail.Session
 import jakarta.mail.Store
 
-def username = "9c1d45eaf7af5b"
-def password = "ad62926fa75d0f"
+def username = "username" // get from Mailtrap
+def password = "password" // get from Mailtrap
 
 def host = "pop3.mailtrap.io"
 def port = 9950
