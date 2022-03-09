@@ -14,7 +14,7 @@ import org.simplejavamail.mailer.MailerBuilder
 def username = "username" 
 def password = "password" 
 def host = "smtp.mailtrap.io"
-def port = 2525;
+def port = 2525
 
 Email email = EmailBuilder.startingBlank()
     .from("John Doe", "john.doe@example.com")
@@ -22,12 +22,12 @@ Email email = EmailBuilder.startingBlank()
     .to("Peter Doe", "peter.doe@example.com")
     .withSubject("Test subject")
     .withPlainText("Test body")
-    .buildEmail();
+    .buildEmail()
 
 MailerBuilder
     .withSMTPServer(host, port, username, password)
     .buildMailer()
-    .sendMail(email);
+    .sendMail(email)
 
 println("Email sent successfully")
 ```
