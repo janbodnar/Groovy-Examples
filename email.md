@@ -11,8 +11,8 @@ import org.simplejavamail.api.email.Email
 import org.simplejavamail.email.EmailBuilder
 import org.simplejavamail.mailer.MailerBuilder
 
-def username = "username" // get from Mailtrap
-def password = "password" // get from Mailtrap
+def username = "username" 
+def password = "password" 
 def host = "smtp.mailtrap.io"
 def port = 2525;
 
@@ -52,19 +52,19 @@ import jakarta.mail.internet.InternetAddress
 import jakarta.mail.internet.MimeMessage
 
 def to = "test@example.com"
-
 def from = "from@example.com"
-def username = "username" // get from Mailtrap
-def password = "password" // get from Mailtrap
+def username = "username" 
+def password = "password" 
 
 def host = "smtp.mailtrap.io"
+def port = 2525
 
 def props = new Properties()
 
 props.put("mail.smtp.auth", "true")
 props.put("mail.smtp.starttls.enable", "true") // optional in Mailtrap
 props.put("mail.smtp.host", host)
-props.put("mail.smtp.port", "2525")
+props.put("mail.smtp.port", port)
 
 def auth = new Authenticator() {
     protected PasswordAuthentication getPasswordAuthentication() {
@@ -99,8 +99,8 @@ import jakarta.mail.Message
 import jakarta.mail.Session
 import jakarta.mail.Store
 
-def username = "username" // get from Mailtrap
-def password = "password" // get from Mailtrap
+def username = "username" 
+def password = "password" 
 
 def host = "pop3.mailtrap.io"
 def port = 9950
@@ -155,8 +155,8 @@ import jakarta.activation.FileDataSource
 
 def to = "test@example.com"
 def from = "from@example.com"
-def username = "9c1d45eaf7af5b"
-def password = "ad62926fa75d0f"
+def username = "username" 
+def password = "password" 
 
 def host = "smtp.mailtrap.io"
 def port = 2525
