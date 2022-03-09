@@ -1,6 +1,38 @@
 # Emails 
 
-## Send test email
+## Send mail with Simple Java Mail
+
+Send test mail with `simple-java-mail` library  
+
+```groovy
+@Grab(group='org.simplejavamail', module='simple-java-mail', version='7.1.0')
+
+import org.simplejavamail.api.email.Email
+import org.simplejavamail.email.EmailBuilder
+import org.simplejavamail.mailer.MailerBuilder
+
+def username = "username" // get from Mailtrap
+def password = "password" // get from Mailtrap
+def host = "smtp.mailtrap.io"
+def port = 2525;
+
+Email email = EmailBuilder.startingBlank()
+    .from("John Doe", "john.doe@example.com")
+    .to("Jane Doe", "jane.doe@example.com")
+    .to("Peter Doe", "peter.doe@example.com")
+    .withSubject("Test subject")
+    .withPlainText("Test body")
+    .buildEmail();
+
+MailerBuilder
+    .withSMTPServer(host, port, username, password)
+    .buildMailer()
+    .sendMail(email);
+
+println("Email sent successfully")
+```
+
+## Send mail with jakarta.mail
 
 Send test email to Mailtrap service  
 
@@ -54,34 +86,48 @@ Transport.send(message)
 println("Email sent successfully")
 ```
 
----
-
-Send test mail with `simple-java-mail` library  
+## Retrieve messages via pop
 
 ```groovy
-@Grab(group='org.simplejavamail', module='simple-java-mail', version='7.1.0')
+@Grab(group='com.sun.mail', module='jakarta.mail', version='2.0.1')
+@Grab(group='com.sun.activation', module='jakarta.activation', version='2.0.1')
 
-import org.simplejavamail.api.email.Email
-import org.simplejavamail.email.EmailBuilder
-import org.simplejavamail.mailer.MailerBuilder
+import java.util.Properties
 
-def username = "username" // get from Mailtrap
-def password = "password" // get from Mailtrap
-def host = "smtp.mailtrap.io"
-def port = 2525;
+import jakarta.mail.Folder
+import jakarta.mail.Message
+import jakarta.mail.Session
+import jakarta.mail.Store
 
-Email email = EmailBuilder.startingBlank()
-    .from("John Doe", "john.doe@example.com")
-    .to("Jane Doe", "jane.doe@example.com")
-    .to("Peter Doe", "peter.doe@example.com")
-    .withSubject("Test subject")
-    .withPlainText("Test body")
-    .buildEmail();
+def username = "9c1d45eaf7af5b"
+def password = "ad62926fa75d0f"
 
-MailerBuilder
-    .withSMTPServer(host, port, username, password)
-    .buildMailer()
-    .sendMail(email);
+def host = "pop3.mailtrap.io"
+def port = 9950
 
-println("Email sent successfully")
+def props = new Properties()
+props.put("mail.pop3.host", host)
+props.put("mail.pop3.port", port)
+
+def session = Session.getDefaultInstance(props)
+def store = session.getStore("pop3")
+store.connect(host, username, password)
+
+def inbox = store.getFolder("Inbox")
+inbox.open(Folder.READ_ONLY)
+
+def messages = inbox.getMessages()
+
+for (message in messages) {
+
+    println message.getFrom()
+    println message.getSubject()
+    println message.getContentStream().getText("UTF-8") 
+    println "-------------------------"
+}
+
+inbox.close(true)
+store.close()
 ```
+
+
