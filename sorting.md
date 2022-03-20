@@ -1,6 +1,6 @@
 # Sorting
 
-## Alphanumeric soring
+## Alphanumeric sorting
 
 ```groovy
 def nums = [ 7, 9, 3, -2, 8, 1, 0 ]
