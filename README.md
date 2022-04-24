@@ -734,6 +734,47 @@ Playwright.create().withCloseable { client ->
 }
 ```
 
+## Jinjava template engine
+
+```jinja
+{%- for task in tasks -%}
+    {% if task.done %}
+        {{ task.title }}
+    {% endif %}
+{%- endfor %}
+```
+This is `tasks.jinja` template file.
+
+```groovy
+@Grab(group='com.hubspot.jinjava', module='jinjava', version='2.6.0')
+
+import com.hubspot.jinjava.Jinjava
+import groovy.transform.Immutable
+
+@Immutable
+class Task {
+    String title
+    boolean done
+}
+
+def jnj = new Jinjava()
+
+def tasks = [ new Task("Task 1", true),
+    new Task("Task 2", true), new Task("Task 3", false),
+    new Task("Task 4", true), new Task("Task 5", false) ]
+
+def context = ["tasks": tasks]
+
+def fileName = "tasks.jinja"
+def template = new File(fileName).text
+
+def res = jnj.render(template, context)
+println res
+
+// record Task(String title, boolean done) { }
+```
+
+Records are not working, we use `@Immutable` instead.  
 
 ## JasperReports simple example
 
