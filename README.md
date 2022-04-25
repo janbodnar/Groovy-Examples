@@ -734,6 +734,98 @@ Playwright.create().withCloseable { client ->
 }
 ```
 
+## Groovy template engine
+
+### Simple
+
+```groovy
+import groovy.text.SimpleTemplateEngine
+
+def text = 'Hello $name!'
+
+def ctx = ["name": "John Doe"]
+
+def engine = new SimpleTemplateEngine() 
+def res = engine.createTemplate(text).make(ctx)
+
+println res
+```
+
+### From file
+
+```jsp
+${name} is a ${occupation}
+```
+
+This is `message.txt` file.
+
+```groovy
+import groovy.text.SimpleTemplateEngine
+
+def text = new File("message.txt").text
+def ctx = ["name": "John Doe", "occupation": "gardener"]
+
+def engine = new SimpleTemplateEngine() 
+def res = engine.createTemplate(text).make(ctx)
+
+println res
+```
+
+### Loop 
+
+```groovy
+import groovy.text.SimpleTemplateEngine
+
+def words = [ "sky", "blue", "cran", "cotton", "wood" ]
+
+def ctx = [words: words]
+
+def engine = new SimpleTemplateEngine()
+def text = '''<% words.each { println "${it} has ${it.length()} characters" } %>'''
+
+def res = engine.createTemplate(text).make(ctx)
+println res
+```
+
+### If condition
+
+```jsp
+<% for (task in tasks) { %>
+    <% if (task.done) { %>
+        <%= task.title %>
+    <% } %>
+<% } %>
+```
+
+```groovy
+import groovy.text.SimpleTemplateEngine
+import groovy.transform.Immutable
+
+@Immutable
+class Task {
+    String title
+    boolean done
+}
+
+def text = new File("tasks.txt").text
+
+def tasks = [ 
+    new Task("Task 1", true), new Task("Task 2", true), 
+    new Task("Task 3", false), new Task("Task 4", true), 
+    new Task("Task 5", false) 
+]
+
+def ctx = ["tasks": tasks]
+
+def engine = new SimpleTemplateEngine()
+
+def res = engine.createTemplate(text).make(ctx)
+def out = res.toString()
+
+println out.replaceAll("\s{2,}", "").replaceAll("\n{2,}", "\n").strip()
+```
+
+
 ## Jinjava template engine
 
 ```jinja
