@@ -787,6 +787,28 @@ def res = engine.createTemplate(text).make(ctx)
 println res
 ```
 
+### Records
+
+```groovy
+import groovy.text.SimpleTemplateEngine
+
+record User(String name, String occupation) {}
+
+def text = '<% users.each { println "${it.name} is a ${it.occupation}" } %>'
+
+def users = [ 
+    new User("John Doe", "gardener"), new User("Roger Roe", "driver"), 
+    new User("Peter Smith", "teacher")
+]
+
+def ctx = [users: users]
+
+def engine = new SimpleTemplateEngine()
+
+def res = engine.createTemplate(text).make(ctx)
+println res
+```
+
 ### If condition
 
 ```jsp
