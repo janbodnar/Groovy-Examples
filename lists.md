@@ -16,6 +16,20 @@ println vals.getClass()
 println vals instanceof List
 ```
 
+## First/Last, Head/Tail
+
+```groovy
+def vals = [1, 2, 3, 4, 5]
+
+println vals.first()
+println vals.head()
+
+println vals.last()
+
+println vals.tail()
+println vals.init()
+```
+
 ## Index/get
 
 ```groovy
