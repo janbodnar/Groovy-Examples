@@ -35,3 +35,12 @@ for (val in vals) {
     println val
 }
 ```
+
+## each* methods
+
+```groovy
+def vals = [11, 22, 33, 44, 55, 66]
+
+vals.each {v -> println v}
+vals.eachWithIndex{idx, v -> println "${v} -> ${idx}"}
+```
