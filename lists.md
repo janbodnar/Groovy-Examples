@@ -9,17 +9,22 @@ println vals.getClass()
 println vals instanceof List
 ```
 
-## Size/index
+## Index/get
 
 ```groovy
-def vals = [1, 2, 3, 4, 5]
-println vals
+def vals = [0, 1, 2, 3, 4, 5]
 
-println "The size is: ${vals.size()}"
 println vals[0]
 println vals[1]
 println vals[-1]
 println vals[-2]
+
+println '-------------------'
+
+println vals.get(0)
+println vals.get(1)
+println vals.getAt(-1)
+println vals.getAt(-2)
 ```
 
 ## Add/remove
