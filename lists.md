@@ -10,3 +10,19 @@ println vals[1]
 println vals[-1]
 println vals[-2]
 ```
+
+## Loop
+
+```groovy
+
+def words = ['cup', 'crisp', 'cloud', 'break', 
+    'falcon', 'war', 'oil']
+
+for (def word in words) {
+    println word
+}
+
+println "----------------------"
+
+words.each { word -> println word }
+```
