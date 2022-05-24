@@ -1,5 +1,14 @@
 # Lists
 
+## Type
+
+```groovy
+def vals = [2, 3, 4, 5]
+
+println vals.getClass()
+println vals instanceof List
+```
+
 ## Size/index
 
 ```groovy
