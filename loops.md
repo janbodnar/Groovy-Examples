@@ -11,6 +11,20 @@ for (int i=0; i<vals.size(); i++) {
 }
 ```
 
+## while loop
+
+```groovy
+def vals = [1, 2, 3, 4, 5, 6]
+
+int i = 0
+int n = vals.size()
+
+while (i < n) {
+    println vals[i]
+    i++
+}
+```
+
 ## for/in loop
 
 ```groovy
