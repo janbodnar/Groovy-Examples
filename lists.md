@@ -1,5 +1,12 @@
 # Lists
 
+## Size
+
+```groovy
+def vals = [1, 2, 3, 4, 5]
+println "The size is: ${vals.size()}"
+```
+
 ## Type
 
 ```groovy
