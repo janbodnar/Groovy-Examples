@@ -28,7 +28,9 @@ println vals[-2]
 def vals = [2, 3, 4, 5]
 
 vals.add(6)
-vals.add(7)
+vals << 7
+vals << 8 << 9 << 10
+
 vals.add(0, 1)
 vals.add(0, 0)
 vals.add(0, -1)
