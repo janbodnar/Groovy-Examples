@@ -89,6 +89,20 @@ println "----------------------"
 words.reverseEach { word -> println word }
 ```
 
+## Grep 
+
+```groovy
+def vals = [-2, -1, 0, 1, 2, 3, 4, 5]
+
+def r1 = vals.grep { it > 0 }
+println r1
+
+def some = [1, true, -4, "falcon", 3.4]
+
+def r2 = some.grep(Number)
+println r2
+```
+
 ## Flatten
 
 ```groovy
