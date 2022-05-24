@@ -16,7 +16,7 @@ println vals.getClass()
 println vals instanceof List
 ```
 
-## First/Last, Head/Tail
+## First/Last, Head/Tail/Init
 
 ```groovy
 def vals = [1, 2, 3, 4, 5]
@@ -73,7 +73,6 @@ println vals
 ## Loop
 
 ```groovy
-
 def words = ['cup', 'crisp', 'cloud', 'break', 
     'falcon', 'war', 'oil']
 
@@ -84,6 +83,10 @@ for (def word in words) {
 println "----------------------"
 
 words.each { word -> println word }
+
+println "----------------------"
+
+words.reverseEach { word -> println word }
 ```
 
 ## Flatten
