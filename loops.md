@@ -35,6 +35,22 @@ for (def val in vals) {
     println val
 }
 ```
+--
+
+```groovy
+record User(String name, String occupation) {}
+
+def users = [
+    new User("John Doe", "gardener"), 
+    new User("Roger Roe", "driver"),
+    new User("Lucy Smith", "teacher")
+]
+
+for (def user in users) {
+
+    println user
+}
+```
 
 ## each* methods
 
