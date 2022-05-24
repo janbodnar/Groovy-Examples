@@ -12,6 +12,18 @@ even/odd
 
 `def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
+## Steps
+
+```groovy
+1.step(4, 0.5) { print "$it "}
+println "\n-----------------------"
+
+1.step(10, 1) { 
+    
+    println it
+}
+```
+
 ## Ranges 
 
 ```groovy
