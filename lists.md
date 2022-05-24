@@ -58,3 +58,17 @@ println "----------------------"
 words.each { word -> println word }
 ```
 
+## Flatten
+
+```groovy
+def vals = [1, 2, 3, 4, 5, [6, 7, [8, 9, [10]]]]
+
+println vals
+println vals[5]
+println vals[5][2]
+println vals[5][2][2]
+println vals[5][2][2][0]
+
+println vals.flatten()
+```
+
