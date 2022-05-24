@@ -44,3 +44,22 @@ def vals = [11, 22, 33, 44, 55, 66]
 vals.each {v -> println v}
 vals.eachWithIndex{idx, v -> println "${v} -> ${idx}"}
 ```
+
+## break statement
+
+```groovy
+def rnd = new Random()
+
+while (true) {
+
+    int num = rnd.nextInt(30)
+    print "$num "
+
+    if (num == 22) {
+
+        break
+    }
+}
+
+println ""
+```
