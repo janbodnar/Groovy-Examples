@@ -1,10 +1,13 @@
 # Lists
 
-## Size
+## Size/max/min
 
 ```groovy
-def vals = [1, 2, 3, 4, 5]
-println "The size is: ${vals.size()}"
+def vals = [-1, 0, 1, 2, 3, 4, 5]
+
+println vals.min()
+println vals.max()
+println vals.size()
 ```
 
 ## Type
