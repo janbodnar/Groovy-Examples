@@ -117,6 +117,20 @@ vals.swap(0, vals.size()-1)
 println vals
 ```
 
+## Plus/minus
+
+```groovy
+def vals = [3, 4]
+def res = vals.plus(5).plus([6, 7]).plus(8..11)
+
+println vals
+println res
+
+def res2 = res.minus(4).minus(5).minus([6, 7]).minus(8..10)
+
+println res2
+```
+
 ## Loop
 
 ```groovy
