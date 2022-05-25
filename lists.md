@@ -84,6 +84,39 @@ vals.remove(0)
 println vals
 ```
 
+## Modify
+
+```groovy
+
+def vals = [3, 4, 5, 6, 7]
+
+println vals
+
+vals.add(8)
+vals << 9 << 10
+vals.addAll([11, 12])
+
+println '--------------------------'
+
+vals.pop()
+vals.push(0)
+
+println vals
+
+println '--------------------------'
+
+vals[1] = 2
+
+println vals
+
+println '--------------------------'
+
+vals.removeAt(3)
+vals.swap(0, vals.size()-1)
+
+println vals
+```
+
 ## Loop
 
 ```groovy
