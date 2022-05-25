@@ -92,6 +92,30 @@ println "----------------------"
 words.reverseEach { word -> println word }
 ```
 
+## Sorting
+
+```groovy
+def nums = [ 7, 9, 3, -2, 8, 1, 0 ]
+def words = [ "sky", "cloud", "atom", "brown", "den", "kite", "town" ]
+
+nums.sort()
+println nums
+
+nums.sort { -it }
+println nums
+
+nums.sort { a, b -> a <=> b }
+println nums
+
+println "--------------------------------------------"
+
+words.sort()
+println words
+
+words.sort { a, b -> b <=> a }
+println words
+```
+
 ## Grep 
 
 ```groovy
