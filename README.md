@@ -24,6 +24,14 @@ println "\n-----------------------"
 }
 ```
 
+## Unix pipes
+
+```groovy
+def p = 'ls -l'.execute()  | ['awk', '{ print $1, $NF }'].execute()
+p.waitFor()
+println p.text
+```
+
 ## Ranges 
 
 ```groovy
