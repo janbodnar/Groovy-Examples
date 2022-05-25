@@ -115,6 +115,16 @@ vals.remove(0)
 println vals
 ```
 
+## Chopping 
+
+```groovy
+def vals = [-2, -1, 0, 0, 1, 1, 2, 3, 4, 4, 4, 5, 6, 4]
+
+println vals.chop(5)
+println vals.chop(5, 6)
+println vals.chop(2, 3, -1)
+```
+
 ## Modify
 
 ```groovy
