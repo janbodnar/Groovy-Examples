@@ -149,6 +149,22 @@ def r2 = some.grep(Number)
 println r2
 ```
 
+## Unique values
+
+```groovy
+
+def vals = [2, 2, -1, -2, 0, 1, 1, 2, -3, 11, 3, 4]
+
+def uniq = vals.unique(false) // creates a copy
+println uniq
+println vals 
+
+println '-----------------------'
+
+vals.unique(true) // removes duplicates in-place
+println vals 
+```
+
 ## Shuffle 
 
 ```groovy
