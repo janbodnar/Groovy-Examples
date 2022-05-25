@@ -149,6 +149,21 @@ def r2 = some.grep(Number)
 println r2
 ```
 
+## Shuffle 
+
+```groovy
+def vals = [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
+
+def shuffled = vals.shuffled()
+println shuffled
+println vals
+
+println '---------------------------'
+
+vals.shuffle()
+println vals
+```
+
 ## Flatten
 
 ```groovy
