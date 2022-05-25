@@ -14,7 +14,7 @@ println words.min { it.size() }
 println words.max { it.size() }
 ```
 
-# Avg/count/sum
+## Avg/count/sum
 
 ```groovy
 def vals = [-2, -1, 0, 1, 2, 3, 4]
@@ -23,6 +23,26 @@ println vals.average()
 println vals.count{ it > 0}
 println vals.sum()
 println vals.grep(it -> it < 0).sum()
+```
+
+## Clear/empty
+
+```groovy
+def vals = [-2, -1, 0, 1, 2, 3, 4]
+
+if (vals.empty) {
+    println "list is empty"
+} else {
+    println "list is not empty"
+}
+
+vals.clear()
+
+if (vals.isEmpty()) {
+    println "list is empty"
+} else {
+    println "list is not empty"
+}
 ```
 
 ## Type
