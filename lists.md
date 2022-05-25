@@ -36,12 +36,19 @@ println vals.init()
 ## Index/get
 
 ```groovy
-def vals = [0, 1, 2, 3, 4, 5]
+def vals = [-2, -1, 0, 1, 2, 3, 4, 5]
 
 println vals[0]
 println vals[1]
 println vals[-1]
 println vals[-2]
+
+println '-------------------'
+
+println vals[0..3]
+println vals[3..-1]
+println vals[0, 2, 5]
+println vals[-2..-5]
 
 println '-------------------'
 
