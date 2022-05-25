@@ -163,3 +163,11 @@ println vals[5][2][2][0]
 println vals.flatten()
 ```
 
+## Execute
+
+```groovy
+def cmds = ['ls', '-l'].execute()
+cmds.waitFor()
+
+println cmds.text
+```
