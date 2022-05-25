@@ -116,20 +116,23 @@ words.sort { a, b -> b <=> a }
 println words
 ```
 
---- 
-
-Reversing 
+## Reversing
 
 ```groovy
-def vals = [ 7, 9, 3, -2, 8, 1, 0 ]
+def vals = [1, 2, 3, 4, 5, 6]
 
-println vals.reverse() // reverse a copy
-println vals 
+println vals.reverse()
+println vals
 
-println '-------------------------'
+println '-----------------------'
 
-Collections.reverse(vals) // reverse in-place
-println vals 
+vals.reverse(true)
+println vals
+
+println '-----------------------'
+
+Collections.reverse(vals)
+println vals
 ```
 
 ## Grep 
