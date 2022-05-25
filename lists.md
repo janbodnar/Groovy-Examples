@@ -8,6 +8,10 @@ def vals = [-1, 0, 1, 2, 3, 4, 5]
 println vals.min()
 println vals.max()
 println vals.size()
+
+def words = ['sky', 'at', 'storm', 'falcon', 'universe']
+println words.min { it.size() }
+println words.max { it.size() }
 ```
 
 ## Type
