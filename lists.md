@@ -254,6 +254,18 @@ vals.unique(true) // removes duplicates in-place
 println vals 
 ```
 
+## Counting
+
+```groovy
+def vals = [-2, -1, 0, 0, 1, 1, 2, 3, 4, 4, 4, 5, 6, 4]
+
+println vals.count(0)
+println vals.count(4)
+println vals.count(6)
+println vals.count { it > 0 }
+println vals.countBy { it < 0}
+```
+
 ## Shuffle 
 
 ```groovy
