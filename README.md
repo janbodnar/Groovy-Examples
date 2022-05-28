@@ -32,6 +32,14 @@ p.waitFor()
 println p.text
 ```
 
+## Download image
+
+```groovy
+def bytes = new URL("http://webcode.me/favicon.ico").bytes
+Files.write(Paths.get("favicon.ico"), bytes)
+```
+
+
 ## Ranges 
 
 ```groovy
