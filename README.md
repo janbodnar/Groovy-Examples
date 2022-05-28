@@ -35,10 +35,12 @@ println p.text
 ## Download image
 
 ```groovy
-def bytes = new URL("http://webcode.me/favicon.ico").bytes
-Files.write(Paths.get("favicon.ico"), bytes)
-```
+import java.nio.file.Files
+import java.nio.file.Paths
 
+def data = "http://webcode.me/favicon.ico".toURL().bytes
+Files.write(Paths.get('favicon.ico'), data)
+```
 
 ## Ranges 
 
