@@ -24,6 +24,18 @@ println "\n-----------------------"
 }
 ```
 
+## Pick random element from list
+
+```groovy
+def words = ["sky", "cup", "tall", "falcon", "cloud"]
+
+def rnd = new Random()
+
+def ri = rnd.nextInt(words.size())
+println words[ri]
+```
+
+
 ## Unix pipes
 
 ```groovy
