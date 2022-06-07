@@ -54,6 +54,28 @@ def data = "http://webcode.me/favicon.ico".toURL().bytes
 Files.write(Paths.get('favicon.ico'), data)
 ```
 
+## Iterate runes
+
+```groovy
+import java.text.BreakIterator
+
+def text = "🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞"
+
+def it = BreakIterator.getCharacterInstance()
+it.setText(text)
+
+def start = it.first()
+def end = it.next()
+
+while (start < end) { 
+
+    println(text.substring(start, end))
+    start = end 
+    end = it.next()
+}
+```
+
+
 ## Ranges 
 
 ```groovy
