@@ -98,3 +98,15 @@ def sum2 = data.sum {
 
 println sum2
 ```
+
+## Multiply
+
+```groovy
+println 'An old falcon'
+println '-' * 15
+
+println 'a foggy mountain'
+println '-'.multiply(15)
+
+println 'a sunny day'
+```
