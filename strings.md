@@ -1,9 +1,8 @@
 # Strings 
 
-## Str to int
+## String to int
 
 ```groovy
-
 def data = ['1', '2', '3', '4', '5']
 def sum = 0 
 
@@ -13,4 +12,10 @@ data.each {
 }
 
 println sum
+
+def sum2 = data.sum {
+    it as int
+}
+
+println sum2
 ```
