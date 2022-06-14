@@ -32,6 +32,13 @@ def y = 12
 println "$x + $y = ${x + y}"
 ```
 
+---
+
+```groovy
+def user = [name: 'John Doe', age: 34]
+println "$user.name is $user.age years old"
+```
+
 ## Formatting
 
 ```groovy
