@@ -1,5 +1,22 @@
 # Strings 
 
+## Concatenation
+
+```groovy
+def w1 = 'an'
+def w2 = 'old'
+def w3 = 'falcon'
+
+def s1 = w1 + ' ' + w2 + ' ' + w3
+println s1
+
+def s2 = w1 << ' ' << w2 << ' ' << w3
+println s2
+
+def s3 = w1.concat(' ').concat(w2).concat(' ').concat(w3)
+println s3
+```
+
 ## Interpolation
 
 ```groovy
