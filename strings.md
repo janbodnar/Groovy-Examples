@@ -17,6 +17,36 @@ def s3 = w1.concat(' ').concat(w2).concat(' ').concat(w3)
 println s3
 ```
 
+## Size
+
+```groovy
+import java.text.BreakIterator
+
+def s1 = 'falcon'
+println s1.length()
+
+def s2 = 'čerešňa'
+println s2.length()
+
+def s3 = '🐜🐬🐄🐘🦂🐫🐑🦍🐯🐞'
+
+def it = BreakIterator.getCharacterInstance()
+it.setText(s3)
+
+def start = it.first()
+def end = it.next()
+int n = 0
+
+while (start < end) { 
+
+    n++
+    start = end 
+    end = it.next()
+}
+
+println n
+```
+
 ## Interpolation
 
 ```groovy
