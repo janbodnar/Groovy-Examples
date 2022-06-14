@@ -1,5 +1,20 @@
 # Strings 
 
+## Interpolation
+
+```groovy
+def name = 'John Doe'
+def occupation = 'gardener'
+
+def msg = "${name} is a ${occupation}"
+println msg
+
+def x = 11
+def y = 12 
+
+println "${x} + ${y} = ${x + y}"
+```
+
 ## String to int
 
 ```groovy
