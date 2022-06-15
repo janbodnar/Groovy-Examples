@@ -110,3 +110,19 @@ println '-'.multiply(15)
 
 println 'a sunny day'
 ```
+
+## Iterate over lines 
+
+```groovy
+def text = """\
+an old falcon
+blue sky
+rainy day
+new computer
+precious stone
+"""
+
+text.eachLine { line -> 
+    println line
+}
+```
