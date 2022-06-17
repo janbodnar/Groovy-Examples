@@ -96,15 +96,15 @@ println users.countBy { u -> u.salary < 1000 }
 ```groovy
 def users = [
    [fname: "Robert", lname: "Novak", salary: 1770],
-   [fname: "John", lname:"Doe", salary: 1230],
-   [fname: "Lucy", lname:"Novak", salary: 670],
-   [fname: "Ben", lname:"Walter", salary: 2050],
+   [fname: "John", lname: "Doe", salary: 1230],
+   [fname: "Lucy", lname: "Novak", salary: 670],
+   [fname: "Ben", lname: "Walter", salary: 2050],
    [fname: "Robin",lname: "Brown", salary: 2300],
    [fname: "Amy",lname: "Doe", salary: 1250],
-   [fname: "Joe", lname:"Draker", salary: 1190],
-   [fname: "Janet", lname:"Doe", salary: 980],
-   [fname: "Peter",lname: "Novak", salary: 990],
-   [fname:"Albert", lname:"Novak",salary: 193]
+   [fname: "Joe", lname: "Draker", salary: 1190],
+   [fname: "Janet", lname: "Doe", salary: 980],
+   [fname: "Peter", lname: "Novak", salary: 990],
+   [fname: "Albert", lname: "Novak",salary: 193]
 ]
 
 println users.groupBy { it.lname }
