@@ -4,6 +4,21 @@ Also called pattern matching, switch expressions provide a concise and powerful
 way of creating conditions in multiple arms. In Groovy, switch expressions return  
 values.  
 
+## Matching string literals 
+
+```groovy
+def res = System.console().readLine 'What is the capital of Slovakia?: '
+def capital = res.capitalize()
+
+def msg = switch (capital) {
+
+    case 'Bratislava' -> 'correct answer'
+    default -> 'wrong answer'
+}
+
+println msg
+```
+
 ## Matching types 
 
 ```groovy
