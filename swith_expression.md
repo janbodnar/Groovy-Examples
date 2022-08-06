@@ -286,4 +286,24 @@ for (user in users) {
 }
 ```
 
+---
+
+```groovy
+def users = [
+    ['name': 'Paul', 'grades': ['D', 'A', 'B', 'A']],
+    ['name': 'Martin', 'grades': ['F', 'B', 'E', 'FX']],
+    ['name': 'Lucia', 'grades': ['A', 'A', 'B', 'FX']],
+    ['name': 'Jan', 'grades': ['A', 'B', 'B', 'B']]
+]
+
+for (user in users) {
+    
+    switch ('FX') {
+
+        case user.grades ->
+            println("${user.name} did not pass the exams")
+    }
+}
+```
+
 
