@@ -19,6 +19,35 @@ def msg = switch (capital) {
 println msg
 ```
 
+## Matching integers 
+
+```groovy
+def menu = '''
+Select option
+1 - start
+2 - slow down
+3 - accelerate
+4 - pause
+5 - terminate
+'''
+
+println menu
+
+def opt = System.console().readLine ': ' 
+
+def res = switch (opt as Integer) {
+
+    case 1 -> 'start'
+    case 2 -> 'slow down'
+    case 3 -> 'accelerate'
+    case 4 -> 'pause'
+    case 5 -> 'terminate'
+    default -> 'unknown'
+}
+
+println "your option: $res"
+```
+
 ## Matching types 
 
 ```groovy
