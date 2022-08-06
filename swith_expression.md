@@ -216,6 +216,30 @@ for (word in words) {
 println selected
 ```
 
+## Matching lists 
 
+Check if a list contains a value.  
+
+```groovy
+def users = [
+    ['John', 'Doe', 'gardener'],
+    ['Jane', 'Doe', 'teacher'],
+    ['Roger', 'Roe', 'driver'],
+    ['Martin', 'Molnar', 'programmer'],
+    ['Robert', 'Kovac', 'shopkeeper'],
+    ['Tomas', 'Novy', 'programmer']
+]
+
+def occupation = 'programmer'
+
+for (user in users) {
+    switch (occupation) {
+        case user ->
+            println("${user[0]} ${user[1]} is a programmer")
+        default ->
+            println("${user[0]} ${user[1]} is not a programmer")
+    }
+}
+```
 
 
