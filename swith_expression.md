@@ -1,7 +1,8 @@
 # Groovy switch expressions
 
 Also called pattern matching, switch expressions provide a concise and powerful  
-way of creating conditions in multiple arms.  
+way of creating conditions in multiple arms. In Groovy, switch expressions return  
+values.  
 
 ## Matching types 
 
