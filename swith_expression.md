@@ -192,6 +192,8 @@ switch (ri) {
 ## Matching regular expressions
 
 ```groovy 
+# select all words starting with w or c
+
 def words = ['week', 'bitcoin', 'cloud', 'copper', 'raw', 'war', 
     'cup', 'water']
 
