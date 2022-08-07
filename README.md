@@ -75,6 +75,21 @@ while (start < end) {
 }
 ```
 
+## Create a deck of cards
+
+```groovy
+def signs = (2..10) + ['J', 'Q', 'K', 'A']
+def symbols = ['♣', '♦', '♥', '♠']
+ 
+// [♣2, ♦2, ♥2, ♠2, ..., ♣A, ♦A, ♥A, ♠A]
+def cards = [symbols, signs].combinations().collect { it.join() }
+println cards
+
+cards.shuffle()
+
+println cards.take(5)
+```
+
 ## Shuffle emoji cards
 
 ```groovy
