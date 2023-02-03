@@ -664,6 +664,38 @@ now.upto(d2, ChronoUnit.DAYS) {
 }
 ```
 
+## SFTP list directory
+
+```groovy
+@Grab(group='com.hierynomus', module='sshj', version='0.35.0')
+
+import net.schmizz.sshj.SSHClient
+import net.schmizz.sshj.transport.verification.PromiscuousVerifier
+import net.schmizz.sshj.sftp.SFTPClient
+import net.schmizz.sshj.sftp.RemoteResourceInfo
+
+try {
+
+    def client = new SSHClient()
+
+    client.addHostKeyVerifier(new PromiscuousVerifier())
+    client.connect("hostname")
+    client.authPassword("username", "s$cret")
+    
+    SFTPClient sftp = client.newSFTPClient()
+
+    List<RemoteResourceInfo> resourceInfoList = sftp.ls("/web/perl/")
+
+    for (def e : resourceInfoList) {
+        println(e.getName())
+    }
+
+} finally {
+    sftp.close() 
+    client.disconnect()
+}
+```
+
 ## LineChart created with JFreeChart
 
 ```groovy
