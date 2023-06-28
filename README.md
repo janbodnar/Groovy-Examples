@@ -696,61 +696,6 @@ try {
 }
 ```
 
-## LineChart created with JFreeChart
-
-```groovy
-package com.zetcode
-
-@Grab('org.jfree:jfreechart:1.5.3')
-
-import org.jfree.chart.ChartFactory
-import org.jfree.chart.ChartPanel
-import org.jfree.chart.JFreeChart
-import org.jfree.chart.plot.PlotOrientation
-import org.jfree.chart.plot.XYPlot
-import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer
-import org.jfree.data.category.DefaultCategoryDataset
-import org.jfree.chart.ChartUtils
-
-def getChart() {
-
-    def dataset = createDataset()
-    return createChart(dataset)
-}
-
-def createDataset() {
-
-    def dataset = new DefaultCategoryDataset()
-
-    dataset.addValue(212, "Classes", "JDK 1.0")
-    dataset.addValue(504, "Classes", "JDK 1.1")
-    dataset.addValue(1520, "Classes", "SDK 1.2")
-    dataset.addValue(1842, "Classes", "SDK 1.3")
-    dataset.addValue(2991, "Classes", "SDK 1.4")
-
-    return dataset
-}
-
-def createChart(dataset){
-
-    def chart = ChartFactory.createLineChart(
-        "Java Standard Class Library", // chart title
-        "Release", // domain axis label
-        "Class Count", // range axis label
-        dataset, // data
-        PlotOrientation.VERTICAL, // orientation
-        false, // include legend
-        true, // tooltips
-        false // urls
-        )
-    
-    return chart
-}
-
-def chart = getChart()
-
-ChartUtils.saveChartAsPNG(new File("mychart.png"), chart, 450, 400)
-```
 
 ## TableSaw dataframe 
 
