@@ -1,5 +1,45 @@
 # Strings 
 
+## int to String
+
+```groovy
+int n = 4
+String msg = "There are " + n + " hawks"
+println msg
+
+int n2 = 4
+String msg2 = "There are $n2 hawks"
+println msg2
+
+int n3 = 4
+
+def builder = new StringBuilder("There are ")
+builder.append(n3)
+builder.append(" hawks")
+
+println builder
+```
+
+## String to int
+
+```groovy
+def data = ['1', '2', '3', '4', '5']
+def sum = 0 
+
+data.each {
+
+    sum += it as int
+}
+
+println sum
+
+def sum2 = data.sum {
+    it as int
+}
+
+println sum2
+```
+
 ## Concatenation
 
 ```groovy
@@ -77,26 +117,6 @@ String name = 'John Doe'
 
 String msg = sprintf "%s is %d years old", name, age
 println msg
-```
-
-## String to int
-
-```groovy
-def data = ['1', '2', '3', '4', '5']
-def sum = 0 
-
-data.each {
-
-    sum += it as int
-}
-
-println sum
-
-def sum2 = data.sum {
-    it as int
-}
-
-println sum2
 ```
 
 ## Multiply
