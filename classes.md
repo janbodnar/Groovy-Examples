@@ -34,7 +34,7 @@ The `@Canonical` annotation adds constructors, `ToString` method and equals/hash
 
 There are several ways to instantiate an object  
 
-``grroovy
+```groovy
 class User {
 
     String name
@@ -49,7 +49,6 @@ class User {
         "${this.name} is a ${this.occupation}"
     }
 }
-
 
 def u = new User('John Doe', 'gardener')
 println u
