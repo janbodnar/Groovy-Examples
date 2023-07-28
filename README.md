@@ -31,6 +31,8 @@ def u = new User('John Doe')
 println u
 ```
 
+Run the app `$ groovy com\zetcode\main.groovy`  
+
 ## Steps
 
 ```groovy
