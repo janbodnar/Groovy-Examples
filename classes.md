@@ -74,11 +74,6 @@ class User {
     String name
     String occupation
 
-    // User(String name, String occupation) {
-    //     this.name = name
-    //     this.occupation = occupation
-    // }
-
     String toString() {
         "${this.name} is a ${this.occupation}"
     }
