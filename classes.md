@@ -106,5 +106,24 @@ def u = new User(name: 'John Doe', occupation: 'gardener')
 println u
 ```
 
+## findAll
 
+```groovy
+import groovy.transform.Immutable
+
+@Immutable
+class Task {
+    String title
+    boolean done
+}
+
+def tasks = [ 
+    new Task("Task 1", true), new Task("Task 2", true), 
+    new Task("Task 3", false), new Task("Task 4", true), 
+    new Task("Task 5", false) 
+]
+
+def res = tasks.findAll { it.done == true }
+println res
+```
 
