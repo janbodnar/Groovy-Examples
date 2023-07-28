@@ -61,7 +61,55 @@ User u3 = ['Paul Smith', 'teacher']
 println u3
 ```
 
+## @TupleConstructor annotation
 
+The `@TupleConstructor` creates a classic constructor  
+
+```groovy
+import groovy.transform.TupleConstructor
+
+@TupleConstructor
+class User {
+
+    String name
+    String occupation
+
+    // User(String name, String occupation) {
+    //     this.name = name
+    //     this.occupation = occupation
+    // }
+
+    String toString() {
+        "${this.name} is a ${this.occupation}"
+    }
+}
+
+
+def u = new User('John Doe', 'gardener')
+println u
+```
+
+## @MapConstructorannotation
+
+The `@MapConstructor` creates a map-style constructor  
+
+```groovy
+import groovy.transform.MapConstructor
+
+@MapConstructor
+class User {
+
+    String name
+    String occupation
+
+    String toString() {
+        "${this.name} is a ${this.occupation}"
+    }
+}
+
+def u = new User(name: 'John Doe', occupation: 'gardener')
+println u
+```
 
 
 
