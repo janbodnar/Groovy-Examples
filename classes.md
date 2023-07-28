@@ -73,14 +73,15 @@ class User {
 
     String name
     String occupation
+    List<String> favcols
 
     String toString() {
-        "${this.name} is a ${this.occupation}"
+        "${this.name} is a ${this.occupation}, favourite colours ${favcols}"
     }
 }
 
 
-def u = new User('John Doe', 'gardener')
+def u = new User('John Doe', 'gardener', ['red', 'green', 'blue'])
 println u
 ```
 
