@@ -27,7 +27,7 @@ println u2.occupation
 ```
 
 We have getters/setters and attributes automatically created.  
-The `@Canonical` annotation adds constructors, `ToString` method and equals/hashcode.  
+The `@Canonical` annotation adds constructors, `toString` method and equals/hashcode.  
 
 
 ## Object instance creation
