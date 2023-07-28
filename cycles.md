@@ -12,6 +12,8 @@ for (int i=0; i<vals.size(); i++) {
 }
 ```
 
+Iterate over a string and range  
+
 ```groovy
 def msg = 'an old falcon'
 
