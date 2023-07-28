@@ -2,7 +2,7 @@
 
 - classes or methods with no visibility modifier public
 - fields with no visibility modifier are turned into properties
-
+- if no constructors are supplied, an empty no-arg constructor is provided  
 
 ```groovy
 import groovy.transform.Canonical
@@ -28,3 +28,41 @@ println u2.occupation
 
 We have getters/setters and attributes automatically created.  
 The `@Canonical` annotation adds constructors, `ToString` method and equals/hashcode.  
+
+
+## Object instance creation
+
+There are several ways to instantiate an object  
+
+``grroovy
+class User {
+
+    String name
+    String occupation
+
+    User(String name, String occupation) {
+        this.name = name
+        this.occupation = occupation
+    }
+
+    String toString() {
+        "${this.name} is a ${this.occupation}"
+    }
+}
+
+
+def u = new User('John Doe', 'gardener')
+println u
+
+def u2 = ['Roger Roe', 'driver'] as User
+println u2.name
+println u2.occupation
+
+User u3 = ['Paul Smith', 'teacher']
+println u3
+```
+
+
+
+
+
