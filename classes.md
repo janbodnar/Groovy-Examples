@@ -85,7 +85,7 @@ def u = new User('John Doe', 'gardener', ['red', 'green', 'blue'])
 println u
 ```
 
-## @MapConstructorannotation
+## @MapConstructor annotation
 
 The `@MapConstructor` creates a map-style constructor  
 
