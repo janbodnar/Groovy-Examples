@@ -584,6 +584,26 @@ f.withWriterAppend('utf-8') {
 ```
 append to file  
 
+## Undertow server 
+
+```groovy
+package com.zetcode
+
+@Grab(group='io.undertow', module='undertow-core', version='2.3.7.Final')
+
+import io.undertow.Undertow
+import io.undertow.util.Headers
+
+def server = Undertow.builder()
+        .addHttpListener(8080, "localhost")
+        .setHandler(exchange -> {
+            exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain")
+            exchange.getResponseSender().send("Hello there")
+        }).build()
+
+server.start()
+```
+
 ## Working with H2 in-memory database
 
 ```groovy
