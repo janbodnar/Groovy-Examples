@@ -25,3 +25,15 @@ for (def e in 1..5) {
     println e
 }
 ```
+
+Iterate over a map  
+
+```groovy
+def user = [name: 'John Doe', occupation: 'gardener']
+
+for (def u in user) {
+
+    println "${u.key}, ${u.value}"
+}
+```
+
