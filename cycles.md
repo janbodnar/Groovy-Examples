@@ -11,3 +11,17 @@ for (int i=0; i<vals.size(); i++) {
     println vals[i]
 }
 ```
+
+```groovy
+def msg = 'an old falcon'
+
+for (def e in msg) {
+    println e
+}
+
+println '-------------------'
+
+for (def e in 1..5) {
+    println e
+}
+```
