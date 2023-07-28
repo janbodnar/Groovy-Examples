@@ -12,6 +12,25 @@ even/odd
 
 `def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
+## Import Groovy code in script
+
+```groovy
+package com.zetcode 
+
+// User.groovy
+record User(String name) {}
+```
+
+```groovy
+package com.zetcode
+
+// main.groovy
+this.class.classLoader.parseClass("User.groovy")
+
+def u = new User('John Doe')
+println u
+```
+
 ## Steps
 
 ```groovy
