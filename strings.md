@@ -1,5 +1,22 @@
 # Strings 
 
+
+## string indexing
+
+```groovy
+String msg = 'an old falcon'
+
+println msg[0]
+println msg[1]
+println msg[-1]
+println msg[-2]
+
+println msg[1..4]
+println msg[3..6]
+
+println msg[-1..0]
+```
+
 ## int to String
 
 ```groovy
