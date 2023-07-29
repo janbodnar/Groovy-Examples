@@ -12,6 +12,21 @@ even/odd
 
 `def evens = [1, 2, 3, 4, 5].findAll{ it % 2 == 0 }` - filter out even values  
 
+## Debug macros 
+
+```groovy
+def name = 'John Doe'
+def vals = [1, 2, 3, -4, 5]
+def words = ['game', 'cup', 'water'] as String[]
+def r = 1..10
+
+println SV(name, vals, words, r)
+println SVI(name, vals, words, r)
+
+println NV(r)
+println NVL(r)
+```
+
 ## Import Groovy code in script
 
 ```groovy
