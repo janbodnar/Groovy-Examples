@@ -33,6 +33,23 @@ println u
 
 Run the app `$ groovy com\zetcode\main.groovy`  
 
+## Arrays
+
+```groovy
+def vals = [1, 2, 3, 4, 5] as int[]
+println vals
+println vals.length
+println vals.size()
+
+def words = new String[] { 'sky', 'cloud', 'pen' }
+println words
+
+String[] words2 = ['borrow', 'water', 'globe']
+println words[0]
+println words[-1]
+println words[0..2]
+```
+
 ## Steps
 
 ```groovy
