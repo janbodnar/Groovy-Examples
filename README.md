@@ -27,6 +27,18 @@ println NV(r)
 println NVL(r)
 ```
 
+## Primitive types are auto-wrapped
+
+```groovy
+int n = 3
+println n.getClass().getName()
+println n.getClass().isPrimitive()
+
+float m = 4.4;
+println m.getClass().getName()
+println m.getClass().isPrimitive()
+```
+
 ## Import Groovy code in script
 
 ```groovy
