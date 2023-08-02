@@ -27,6 +27,19 @@ println NV(r)
 println NVL(r)
 ```
 
+## Executable JARs in Gradle 
+
+```groovy
+jar {
+  manifest {
+    attributes(
+      'Main-Class': 'com.zetcode.Application'
+    )
+  }
+}
+```
+
+
 ## Primitive types are auto-wrapped
 
 ```groovy
