@@ -39,7 +39,7 @@ jar {
 }
 ```
 
-## def keywor
+## def keyword
 
 With `def` ariables act like they are of type Object, so they can be reassigned to different types.  
 
@@ -58,6 +58,24 @@ def (name1, name2, name3) = ['John Doe', 'Roger Roe', 'Lucia Smith']
 println name1 
 println name2
 println name3
+```
+
+Using typed variables on the left side.  
+
+```groovy
+def (int x, int y , String w) = [10, 20, 'falcon']
+
+println x
+println y
+println w
+```
+
+The `_` discard operator  
+
+```groovy
+def (_, month, year) = "3rd August 2023".split()
+println month
+println year
 ```
 
 
