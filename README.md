@@ -39,6 +39,27 @@ jar {
 }
 ```
 
+## def keywor
+
+With `def` ariables act like they are of type Object, so they can be reassigned to different types.  
+
+```groovy
+def x = 12
+println x.getClass().getName()
+
+x = 'falcon'
+println x.getClass().getName()
+```
+
+## Multiple assignments
+
+```groovy
+def (name1, name2, name3) = ['John Doe', 'Roger Roe', 'Lucia Smith']
+println name1 
+println name2
+println name3
+```
+
 
 ## Primitive types are auto-wrapped
 
@@ -289,6 +310,19 @@ def f = new File(fname)
 def res = f.filterLine { it =~ /^w.*/ }
 println res
 ```
+
+## Methods must return def or type
+
+```groovy
+sum(x, y) {
+    x + y
+}
+
+println sum(1, 3)
+```
+
+This code fails.
+
 
 ## Process
 
