@@ -978,6 +978,41 @@ Playwright.create().withCloseable { client ->
 }
 ```
 
+## Generate test data 
+
+Generating test data with `datafaker`.  
+
+```groovy
+@Grab(group='net.datafaker', module='datafaker', version='2.0.1')
+
+import net.datafaker.Faker
+
+import java.util.concurrent.TimeUnit
+
+def faker = new Faker()
+
+println faker.name().fullName()
+
+String firstName = faker.name().firstName()
+String lastName = faker.name().lastName()
+println "${firstName} ${lastName}"
+
+println faker.address().streetAddress()
+
+println faker.job().title()
+println faker.job().position()
+
+println faker.country().name()
+println faker.country().capital()
+
+println faker.date().birthday()
+println faker.date().birthday('Y/M/d')
+println faker.date().birthday(18, 65)
+println faker.date().future(30, TimeUnit.DAYS)
+```
+
+
+
 ## Groovy template engine
 
 ### Simple
