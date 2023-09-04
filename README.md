@@ -856,7 +856,7 @@ package com.zetcode
 @Grab(group='org.slf4j', module='slf4j-simple', version='1.7.32', scope='test')
 
 import tech.tablesaw.api.Table
-import static tech.tablesaw.aggregate.AggregateFunctions.max
+import static tech.tablesaw.aggregate.AggregateFunctions.min
 import static tech.tablesaw.aggregate.AggregateFunctions.max
 import static tech.tablesaw.aggregate.AggregateFunctions.mean
 import static tech.tablesaw.aggregate.AggregateFunctions.median
