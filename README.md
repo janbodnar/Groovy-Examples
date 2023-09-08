@@ -41,7 +41,7 @@ jar {
 
 ## def keyword
 
-With `def` ariables act like they are of type Object, so they can be reassigned to different types.  
+With `def` variables act like they are of type Object, so they can be reassigned to different types.  
 
 ```groovy
 def x = 12
