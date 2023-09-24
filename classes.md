@@ -61,6 +61,29 @@ User u3 = ['Paul Smith', 'teacher']
 println u3
 ```
 
+## Object creation with tap 
+
+```groovy
+class User {
+
+    String name
+    String occupation
+
+    User() {}
+
+    String toString() {
+        "${this.name} is a ${this.occupation}"
+    }
+}
+
+def u = new User().tap {
+    name = 'John Doe'
+    occupation = 'gardener'
+}
+
+println u
+```
+
 ## @TupleConstructor annotation
 
 The `@TupleConstructor` creates a classic constructor  
