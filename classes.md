@@ -1,6 +1,6 @@
 # Groovy Classes
 
-- classes or methods with no visibility modifier public
+- classes or methods with no visibility modifier are public
 - fields with no visibility modifier are turned into properties
 - if no constructors are supplied, an empty no-arg constructor is provided  
 
