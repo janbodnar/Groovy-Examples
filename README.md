@@ -293,6 +293,45 @@ res = vals.grep { it != 15 || it != 16 }.collect { it * it }.sum()
 println res
 ```
 
+## Spaceship operator 
+
+```groovy
+
+class User implements Comparable {
+
+    String fname
+    String lname
+    String occupation
+
+    User(String fname, String lname, String occupation) {
+        this.fname = fname;
+        this.lname = lname;
+        this.occupation = occupation;
+    }
+
+    int compareTo(o) {
+        this.lname <=> o.lname
+    }
+
+    String toString() {
+        "${this.fname} ${this.lname} - ${this.occupation}"
+    }
+}
+
+
+def users = [
+    new User('John', 'Doe', 'gardener'),
+    new User('Roger', 'Roe', 'driver'),
+    new User('Lucia', 'Smith', 'accountant'),
+    new User('Paul', 'Newman', 'firefighter'),
+    new User('Adam', 'Clapton', 'teacher'),
+    new User('Jane', 'Walter', 'pilot')
+]
+
+println users
+println users.sort()
+```
+
 ## grepping/filtering  
 
 ```groovy
