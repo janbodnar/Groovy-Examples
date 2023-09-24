@@ -129,6 +129,18 @@ println words[-1]
 println words[0..2]
 ```
 
+---
+
+Defining an array through range.  
+
+```groovy
+int[] nums = -3..2
+println nums
+
+def res = nums.findAll(e -> e % 2 == 0)
+println res
+```
+
 ## Steps
 
 ```groovy
