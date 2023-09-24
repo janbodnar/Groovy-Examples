@@ -70,7 +70,9 @@ for (def e in nums) {
 }
 
 def words = ['sky', 'blue', 'war', 'water', 'coffee'] as String[]
-words.eachWithIndex{ e, i -> println "${i}: ${e}" }
+
+words.each {e -> println e}
+words.eachWithIndex { e, i -> println "${i}: ${e}" }
 ```
 
 
