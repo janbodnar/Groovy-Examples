@@ -199,3 +199,11 @@ res = nums.every { it > 0 } // is every element positive?
 println res
 ```
 
+## Flatten array
+
+```groovy
+int[][] nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+println nums
+println nums.flatten()
+```
