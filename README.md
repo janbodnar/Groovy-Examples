@@ -280,6 +280,8 @@ for (def d in days) {
 
 ## Method chainging
 
+Groovy has support for method chaining.  
+
 ```groovy
 
 int[] vals = [1, 15, 16, 30, 12]
