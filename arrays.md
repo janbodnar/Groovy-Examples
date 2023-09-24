@@ -177,6 +177,16 @@ res = nums.find { it > 0 } // get fst element giving true
 println res
 ```
 
+## Joining elements 
+
+```groovy
+String[] words = ['sky', 'waterfall', 'superintendent', 'war', 'count', 'up',
+    'existence', 'powerful']
+
+def res = words.join(', ')
+println res
+```
+
 ## The any/every methods 
 
 ```groovy
