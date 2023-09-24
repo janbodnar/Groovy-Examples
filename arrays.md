@@ -54,6 +54,14 @@ println nums.average()
 println nums.count(-4)
 ```
 
+```groovy
+String[] words = ['sky', 'waterfall', 'superintendent', 'war', 'count', 'up',
+    'existence', 'powerful']
+
+println words.max { it.size() }
+println words.min { it.size() }
+```
+
 ## Element access
 
 Element access via index `[]` operator or via `getAt` method.  
@@ -174,10 +182,10 @@ println res
 ```groovy
 int[] nums = -4..10
 
-def res = nums.any {it > 0 } // are there any positive values?
+def res = nums.any { it > 0 } // are there any positive values?
 println res
 
-res = nums.every {it > 0 } // is every element positive?
+res = nums.every { it > 0 } // is every element positive?
 println res
 ```
 
