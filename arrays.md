@@ -138,4 +138,15 @@ res = nums.find { it > 0 } // get fst element giving true
 println res
 ```
 
+## The any/every methods 
+
+```groovy
+int[] nums = -4..10
+
+def res = nums.any {it > 0 } // are there any positive values?
+println res
+
+res = nums.every {it > 0 } // is every element positive?
+println res
+```
 
