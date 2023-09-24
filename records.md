@@ -8,12 +8,12 @@ Groovy already had similar annotations: `@Immutable` and  `@Canonical`.
 ```groovy
 record User(String fname, String lname, String occupation) { }
 
-def u1 = new User('John', 'Doe', 'gardener')
-println u1 
+def u = new User('John', 'Doe', 'gardener')
+println u 
 
-println u1.fname
-println u1.lname
-println u1.occupation
+println u.fname
+println u.lname
+println u.occupation
 ```
 
 ## Sortable with records
@@ -66,7 +66,7 @@ def users = [
  
 def res = users.groupBy({ it.occupation })
 
-for (e in res) {
+for (def e in res) {
     
     println e
 }
