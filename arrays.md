@@ -61,7 +61,7 @@ println words[-1]
 println words[0..2]
 ```
 
-## Array iteration
+## Iteration
 
 ```groovy
 def nums = [1, 2, 3, 4, 5] as int[]
@@ -74,6 +74,18 @@ def words = ['sky', 'blue', 'war', 'water', 'coffee'] as String[]
 
 words.each {e -> println e}
 words.eachWithIndex { e, i -> println "${i}: ${e}" }
+```
+
+## Filtering
+
+Filtering is done with `grep`.  
+
+```groovy
+String[] words = ['sky', 'water', 'war', 'count', 'array', 'pen',
+        'cloud', 'top', 'ten', 'warm', 'cup', 'coin']
+
+def res = words.grep { e -> e.startsWith('w') || e.startsWith('c') }
+println res
 ```
 
 ## Finding elements
