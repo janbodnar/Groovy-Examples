@@ -119,6 +119,21 @@ words[0] = 'skylark'
 println words
 ```
 
+## Sorting 
+
+The `sort` method sorts the array in-place.  
+
+```groovy
+String[] words = ['sky', 'water', 'war', 'count', 'array', 'pen',
+        'cloud', 'top', 'ten', 'warm', 'cup', 'coin']
+
+println words.sort()
+
+println '----------------------------'
+
+println words.reverse()
+```
+
 ## Filtering
 
 Filtering is done with `grep`.  
