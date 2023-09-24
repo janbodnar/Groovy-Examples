@@ -25,6 +25,17 @@ def u = new User(lname:'Roe', fname:'Roger', occupation:'driver')
 println u
 ```
 
+## Destructure
+
+```groovy
+record User(String fname, String lname, String occupation) { }
+
+def u = new User('John', 'Doe', 'gardener')
+def (fname, lname, occupation) = u
+
+println "${fname} ${lname} is a ${occupation}"
+```
+
 ## Sortable with records
 
 ```groovy
