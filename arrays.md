@@ -127,6 +127,22 @@ words[0] = 'skylark'
 println words
 ```
 
+## Shuffle elements
+
+```groovy
+String[] words = ['sky', 'cloud', 'pen']
+println words
+
+words.shuffle()
+println words
+
+words.shuffle()
+println words
+
+words.shuffle()
+println words
+```
+
 ## Sorting 
 
 The `sort` method sorts the array in-place.  
