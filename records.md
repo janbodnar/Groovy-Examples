@@ -3,7 +3,18 @@
 Groovy 4 introduced records.    
 Groovy already had similar annotations: `@Immutable` and  `@Canonical`.  
 
+## Simple
 
+```groovy
+record User(String fname, String lname, String occupation) { }
+
+def u1 = new User('John', 'Doe', 'gardener')
+println u1 
+
+println u1.fname
+println u1.lname
+println u1.occupation
+```
 
 ## Sortable with records
 
