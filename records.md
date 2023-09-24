@@ -16,6 +16,15 @@ println u.lname
 println u.occupation
 ```
 
+## Named-arg constructor
+
+```groovy
+record User(String fname, String lname, String occupation) { }
+
+def u = new User(lname:'Roe', fname:'Roger', occupation:'driver')
+println u
+```
+
 ## Sortable with records
 
 ```groovy
