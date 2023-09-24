@@ -102,6 +102,22 @@ println words.contains('war')
 println words.contains('small')
 ```
 
+## Remove element 
+
+Array elements can be modified but not deleted. The `-` operator  
+creates a new array without the given element.  
+
+```groovy
+String[] words = ['sky', 'water', 'war', 'cup']
+
+def words2 = words - 'war'
+
+println words
+println words2
+
+words[0] = 'skylark'
+println words
+```
 
 ## Filtering
 
