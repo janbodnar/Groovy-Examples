@@ -65,10 +65,11 @@ println nums[0]
 println nums[1]
 println nums.getAt(0)
 println nums.getAt(1)
+println nums.getAt(-1..1)
 
 println '------------------------'
 
-String[] words2 = ['borrow', 'water', 'globe']
+String[] words = ['borrow', 'water', 'globe']
 println words[0]
 println words[-1]
 println words[0..2]
