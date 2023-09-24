@@ -41,6 +41,18 @@ int[] nums = -3..2
 println nums
 ```
 
+## size, min, max, sum, count
+
+```groovy
+int[] nums = -4..10
+
+println nums.size()
+println nums.min()
+println nums.max()
+println nums.sum()
+println nums.count(-4)
+```
+
 ## Element access
 
 Element access via index `[]` operator or via `getAt` method.  
