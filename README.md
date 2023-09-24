@@ -296,7 +296,18 @@ println res
 ## Spaceship operator 
 
 ```groovy
+def words = ['sky', 'water', 'emotion', 'shredder', 
+    'anonymous', 'on', 'a', 'copper', 'the', 'elephant']
 
+words.sort { e1, e2 -> e1.length() <=> e2.length() }
+println words
+
+words.sort { e1, e2 -> e2.length() <=> e1.length() }
+println words
+```
+
+
+```groovy
 class User implements Comparable {
 
     String fname
