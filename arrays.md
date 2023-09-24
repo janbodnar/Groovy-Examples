@@ -90,6 +90,19 @@ words.each {e -> println e}
 words.eachWithIndex { e, i -> println "${i}: ${e}" }
 ```
 
+## Check element existence
+
+Using `contains`.  
+
+```groovy
+String[] words = ['sky', 'water', 'war', 'count', 'array', 'pen',
+        'cloud', 'top', 'ten', 'warm', 'cup', 'coin']
+
+println words.contains('war')
+println words.contains('small')
+```
+
+
 ## Filtering
 
 Filtering is done with `grep`.  
