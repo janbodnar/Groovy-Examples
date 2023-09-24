@@ -41,7 +41,7 @@ int[] nums = -3..2
 println nums
 ```
 
-## size, min, max, sum, count
+## size, min, max, sum, average, count
 
 ```groovy
 int[] nums = -4..10
@@ -50,6 +50,7 @@ println nums.size()
 println nums.min()
 println nums.max()
 println nums.sum()
+println nums.average()
 println nums.count(-4)
 ```
 
