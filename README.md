@@ -307,6 +307,20 @@ def res3 = words.grep(~/.../)
 println res3
 ```
 
+Filter by class and list contains
+
+```groovy
+def data = [true, 'sky', 1.2, 0, 1..3, new BigDecimal(4), [1, 2, 3]]
+
+def res = data.grep(Number)
+println(res)
+
+def words = ['key', 'cup', 'cloud', 'storm', 'wood']
+res = words.grep(['cup', 'wood', 'car'])
+println res
+```
+
+
 ```groovy
 def gcd(a,b) {
   if (!b) a
