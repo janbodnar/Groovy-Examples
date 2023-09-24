@@ -69,8 +69,6 @@ class User {
     String name
     String occupation
 
-    User() {}
-
     String toString() {
         "${this.name} is a ${this.occupation}"
     }
