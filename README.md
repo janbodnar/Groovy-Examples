@@ -278,6 +278,18 @@ for (def d in days) {
 }
 ```
 
+## Method chainging
+
+```groovy
+
+int[] vals = [1, 15, 16, 30, 12]
+
+def res = vals.grep(12..18).sum()
+println res
+
+res = vals.grep { it != 15 || it != 16 }.collect { it * it }.sum()
+println res
+```
 
 ## grepping/filtering  
 
