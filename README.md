@@ -132,10 +132,20 @@ println words[0..2]
 ---
 
 Defining an array through range.  
+Element access via index `[]` operator or via `getAt` method.  
 
 ```groovy
 int[] nums = -3..2
 println nums
+
+println '------------------------'
+
+println nums[0]
+println nums[1]
+println nums.getAt(0)
+println nums.getAt(1)
+
+println '------------------------'
 
 def res = nums.findAll(e -> e % 2 == 0)
 println res
