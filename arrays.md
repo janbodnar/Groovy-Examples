@@ -103,7 +103,7 @@ println res
 ## Finding elements
 
 ```groovy
-def nums = -4..10
+int[] nums = -4..10
 
 def res = nums.findAll(e -> e % 2 == 0)
 println res
