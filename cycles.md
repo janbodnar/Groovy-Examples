@@ -42,6 +42,16 @@ for (def u in user) {
 }
 ```
 
+## iterate with index
+
+```groovy
+def words = ['key', 'cup', 'cloud', 'storm', 'wood']
+
+words.eachWithIndex { e, i ->
+    println "${i}: ${e}"
+}
+```
+
 ## while cycle
 
 ```groovy
