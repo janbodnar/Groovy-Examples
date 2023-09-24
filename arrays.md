@@ -100,6 +100,17 @@ def res = words.grep { e -> e.startsWith('w') || e.startsWith('c') }
 println res
 ```
 
+## Mapping
+
+The map operation is done with `collect`.  
+
+```groovy
+int[] nums = -4..10
+
+def res = nums.collect { it * it } 
+println res
+```
+
 ## Finding elements
 
 ```groovy
