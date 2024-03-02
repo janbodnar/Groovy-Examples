@@ -154,14 +154,14 @@ System.out.println(resp.statusCode())
 
 ## BodyHandlers.ofLines
 
+The example prints the paragraphs of the retrieved HTML file.  
+
 ```groovy
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.net.URI
 import java.util.stream.Stream
-
-boolean show = false
 
 String uri = 'https://webcode.me/'
 
@@ -175,6 +175,7 @@ HttpResponse<Stream<String>> resp = client.send(req,
 
 System.out.println(resp.statusCode())
 
+boolean show = false
 resp.body().forEach(line -> {
     if (line.trim().startsWith('<p>')) {
         show = true
