@@ -152,6 +152,46 @@ HttpResponse<Path> resp = client.send(req,
 System.out.println(resp.statusCode())
 ```
 
+## BodyHandlers.ofLines
+
+```groovy
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import java.net.URI
+import java.util.stream.Stream
+
+boolean show = false
+
+String uri = 'https://webcode.me/'
+
+HttpClient client = HttpClient.newHttpClient()
+HttpRequest req = HttpRequest.newBuilder()
+        .uri(URI.create(uri))
+        .build()
+
+HttpResponse<Stream<String>> resp = client.send(req,
+        HttpResponse.BodyHandlers.ofLines())
+
+System.out.println(resp.statusCode())
+
+resp.body().forEach(line -> {
+    if (line.trim().startsWith('<p>')) {
+        show = true
+    }
+
+    if (line.trim().startsWith('</p>')) {
+        System.out.println(line)
+        show = false
+    }
+
+    if (show) {
+        System.out.println(line)
+    }
+})
+```
+
+
 ## Proxy
 
 ```groovy
