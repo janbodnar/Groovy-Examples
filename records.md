@@ -92,3 +92,32 @@ for (def e in res) {
 }
 ```
 
+```groovy
+import java.time.LocalDate
+
+record User(String name, String occupation, LocalDate dob) { 
+    static User of(String name, String occupation, LocalDate dob) {
+        return new User(name, occupation, dob)
+    }
+}
+
+def users = [
+
+    User.of('John Doe', 'gardener', LocalDate.parse('1973-09-07', 'yyyy-MM-dd')),
+    User.of('Roger Roe', 'driver', LocalDate.parse('1963-03-30', 'yyyy-MM-dd')),
+    User.of('Kim Smith', 'teacher', LocalDate.parse('1980-05-12', 'yyyy-MM-dd')),
+    User.of('Joe Nigel', 'artist', LocalDate.parse('1983-03-30', 'yyyy-MM-dd')),
+    User.of('Liam Strong', 'teacher', LocalDate.parse('2009-03-06', 'yyyy-MM-dd')),
+    User.of('Robert Young', 'gardener', LocalDate.parse('1978-11-16', 'yyyy-MM-dd')),
+    User.of('Liam Strong', 'teacher', LocalDate.parse('1986-10-23', 'yyyy-MM-dd'))
+]
+ 
+def res = users.groupBy({ it.occupation })
+
+for (def e in res) {
+    
+    println e
+}
+```
+
+
