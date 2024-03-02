@@ -88,13 +88,13 @@ import static java.time.temporal.ChronoUnit.DAYS
 
 def now = LocalDate.now()
 def date1 = now.plusDays(30)
-System.out.println(date1)
+println(date1)
 
 def date2 = now.minusWeeks(15)
-System.out.println(date2)
+println(date2)
 
 def date3 = now.plusYears(6)
-System.out.println(date3)
+println(date3)
 
 def newYear = LocalDate.of(2024, 1, 1)
 long dif = DAYS.between(newYear, now)
