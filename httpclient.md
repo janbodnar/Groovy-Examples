@@ -123,6 +123,35 @@ for (user: users)
 
 Get and process JSON resource
 
+
+## BodyHandlers.ofFile
+
+The resource is automatically written to the specified file. 
+
+```groovy
+import java.net.http.HttpClient
+import java.net.http.HttpRequest
+import java.net.http.HttpResponse
+import java.net.URI
+import java.nio.file.Paths
+import java.nio.file.Path
+
+String uri = "https://webcode.me"
+
+HttpClient client = HttpClient.newHttpClient()
+HttpRequest req = HttpRequest.newBuilder()
+        .uri(URI.create(uri))
+        .build()
+
+String fileName = "index.html"
+Path path = Paths.get(fileName)
+
+HttpResponse<Path> resp = client.send(req,
+        HttpResponse.BodyHandlers.ofFile(path))
+
+System.out.println(resp.statusCode())
+```
+
 ## Proxy
 
 ```groovy
