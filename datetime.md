@@ -77,3 +77,40 @@ println("${anotherDate} parses to ${lds}")
 
 It may be necessary to specify the locale.  
 
+## Temporal adjusters
+
+Temporal adjusters are used for modifying temporal objects (LodalDate,  
+LodalDateTime, HijrahDate ) They allow to easily calculate calculations such  
+as finding first day of week, moth, year etc.  
+
+```groovy
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.temporal.TemporalAdjusters
+
+def ld = LocalDate.now()
+println("today: ${ld}")
+
+def date1 = ld.with(TemporalAdjusters.firstDayOfMonth())
+println("first day of month: ${date1}")
+
+def date2 = ld.with(TemporalAdjusters.lastDayOfMonth())
+println("last day of month: ${date2}")
+
+def date3 = ld.with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+println("next Monday: ${date3}")
+
+def date4 = ld.with(TemporalAdjusters.firstDayOfNextMonth())
+println("first day of next month: ${date4}")
+
+def date5 = ld.with(TemporalAdjusters.lastDayOfYear())
+println("last day of year: ${date5}")
+
+def date6 = ld.with(TemporalAdjusters.firstDayOfYear())
+println("first day of year: ${date6}")
+
+def date7 = ld.with(TemporalAdjusters.lastInMonth(DayOfWeek.SUNDAY))
+println("last Sunday of month: ${date7}")
+```
+
+
