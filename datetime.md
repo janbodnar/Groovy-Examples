@@ -1,5 +1,34 @@
 # Date and time 
 
+## Current datetime 
+
+```groovy
+import java.time.LocalDate
+import java.time.Month
+import java.time.MonthDay
+import java.time.YearMonth
+
+
+def date = LocalDate.now()
+println("Current Date: ${date}")
+
+def date2 = LocalDate.of(2017, Month.NOVEMBER, 13)
+println("Date from specified date: ${date2}")
+
+// current year and month
+def yearMo = YearMonth.now()
+println("Current Year and month: ${yearMo}")
+
+def specifiedDate = YearMonth.of(2000, Month.NOVEMBER)
+println("Specified Year-Month: ${specifiedDate}")
+
+def monthDay = MonthDay.now()
+println("Current month and day: ${monthDay}")
+
+def specifiedDate2 = MonthDay.of(Month.NOVEMBER, 11)
+println("Specified Month-Day: ${specifiedDate2}")
+```
+
 
 ## Instant
 
