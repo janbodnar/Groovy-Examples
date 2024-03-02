@@ -92,6 +92,8 @@ for (def e in res) {
 }
 ```
 
+Split users into millenials and others. We use the static `of` builder method for the record.  
+
 ```groovy
 import java.time.LocalDate
 
@@ -111,11 +113,19 @@ def users = [
     User.of('Robert Young', 'gardener', LocalDate.parse('1978-11-16', 'yyyy-MM-dd')),
     User.of('Liam Strong', 'teacher', LocalDate.parse('1986-10-23', 'yyyy-MM-dd'))
 ]
- 
-def res = users.groupBy({ it.occupation })
 
-for (def e in res) {
-    
+def millen = LocalDate.parse('2000-01-01')
+def res = users.groupBy({ it.dob > millen })
+
+println 'millenials'
+
+for (def e in res[true]) {
+    println e
+}
+
+println 'others'
+
+for (def e in res[false]) {
     println e
 }
 ```
