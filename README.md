@@ -278,12 +278,11 @@ for (def d in days) {
 }
 ```
 
-## Method chainging
+## Method chaining
 
 Groovy has support for method chaining.  
 
 ```groovy
-
 int[] vals = [1, 15, 16, 30, 12]
 
 def res = vals.grep(12..18).sum()
