@@ -53,6 +53,33 @@ def yesterday = Instant.now().minus(24, ChronoUnit.HOURS)
 println("Yesterday: ${yesterday}")
 ```
 
+## Get age
+
+We can use `Period.between` to get the person's age from the date of birth.  
+
+```groovy
+import java.time.LocalDate
+import java.time.Period
+
+def dobs = [
+    LocalDate.parse('1973-09-07', 'yyyy-MM-dd'),
+    LocalDate.parse('1963-03-30', 'yyyy-MM-dd'),
+    LocalDate.parse('1980-05-12', 'yyyy-MM-dd'),
+    LocalDate.parse('1983-03-30', 'yyyy-MM-dd'),
+    LocalDate.parse('2009-03-06', 'yyyy-MM-dd'),
+    LocalDate.parse('1978-11-16', 'yyyy-MM-dd'),
+    LocalDate.parse('1986-10-23', 'yyyy-MM-dd')
+]
+
+def now = LocalDate.now()
+
+for (def dob in dobs) {
+    
+    int age = Period.between(dob, now).getYears()
+    println("age: ${age}")
+}
+```
+
 ## Parsing datetime as strings
 
 ```groovy
