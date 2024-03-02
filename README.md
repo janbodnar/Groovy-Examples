@@ -51,6 +51,31 @@ x = 'falcon'
 println x.getClass().getName()
 ```
 
+## System properties
+
+```groovy
+println System.getProperty("java.vendor")
+println System.getProperty("os.arch")
+println System.getProperty("os.name")
+println System.getProperty("java.class.version")
+println System.getProperty("java.class.path")
+
+println System.currentTimeMillis()
+```
+
+## Environment variables 
+
+```groovy
+println System.getenv("JAVA_HOME")
+println System.getenv("GROOVY_HOME")
+println System.getenv("PATH")
+
+println '------------------------'
+
+def env = System.getenv().collect { k, v -> "$k=$v" }
+env.each { e -> println e }
+```
+
 ## Multiple assignments
 
 ```groovy
