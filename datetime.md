@@ -104,6 +104,26 @@ println("${anotherDate} parses to ${lds}")
 
 It may be necessary to specify the locale.  
 
+## ZonedDateTime
+
+The example prints the current datetime in Bratislava and Moscow, and the UTC datetime.
+
+```groovy
+import java.time.ZoneId
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
+
+def zbrat = ZonedDateTime.now(ZoneId.of("Europe/Bratislava"))
+def zmosc = ZonedDateTime.now(ZoneId.of("Europe/Moscow"))
+
+println(zbrat)
+println(zmosc)
+
+def utc = ZonedDateTime.now(ZoneOffset.UTC)
+println(utc)
+```
+
+
 ## Temporal adjusters
 
 Temporal adjusters are used for modifying temporal objects (LodalDate,  
