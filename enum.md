@@ -1,5 +1,18 @@
 # Enum type
 
+## ordinal, values
+
+```groovy
+enum Size {
+    SMALL, MEDIUM, LARGE
+}
+
+Size.each { println it }
+Size.each { println "${it} ${it.ordinal()}" }
+
+println Size.values()
+```
+
 
 ## Custom method
 
