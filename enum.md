@@ -7,6 +7,8 @@ enum Size {
     SMALL, MEDIUM, LARGE
 }
 
+println Size.SMALL
+
 Size.each { println it }
 Size.each { println "${it} ${it.ordinal()}" }
 
