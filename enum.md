@@ -15,6 +15,24 @@ Size.each { println "${it} ${it.ordinal()}" }
 println Size.values()
 ```
 
+## String coercion
+
+```groovy
+
+enum State {
+    up,
+    down
+}
+
+println State.up == 'up' as State
+println State.down == 'down' as State
+
+State s1 = 'up'
+State s2 = 'down'
+
+println State.up == s1
+println State.down == s2
+```
 
 ## Custom method
 
