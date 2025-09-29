@@ -11,7 +11,9 @@ an in-depth description of arrays and necessary definitions.
 
 When asked to add description, provide a brief description below the section  
 and explain the code example in more details below the code.  Text should be  
-max 80 chars per line, terminated with two spaces.  
+max 80 chars per line, terminated with two spaces. If there are already some examples  
+and the description is missing, add it.  
+
 Be consistent with existing documents in the repository.
 
 ## Examples 
