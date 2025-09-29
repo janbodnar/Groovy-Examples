@@ -1,17 +1,17 @@
 # Groovy switch expressions
 
-Switch expressions, also known as pattern matching, are a powerful and expressive  
-feature in Groovy that provides a concise way to handle multiple conditional  
-branches. Unlike traditional switch statements that execute code blocks, switch  
-expressions return values directly, making them ideal for functional programming  
-patterns and clean, readable code.  
+Switch expressions, also known as pattern matching, are a powerful and  
+expressive feature in Groovy that provides a concise way to handle multiple  
+conditional branches. Unlike traditional switch statements that execute code  
+blocks, switch expressions return values directly, making them ideal for  
+functional programming patterns and clean, readable code.  
 
 Groovy switch expressions support advanced pattern matching capabilities,  
-including type matching, range matching, regular expressions, collections, and  
-custom predicates. They offer a more elegant alternative to long if-else chains  
-and provide compile-time safety when used with enums. The arrow syntax (->)  
-makes the intent clear and eliminates the need for break statements, reducing  
-common programming errors.  
+including type matching, range matching, regular expressions, collections,  
+and custom predicates. They offer a more elegant alternative to long  
+if-else chains and provide compile-time safety when used with enums. The  
+arrow syntax (->) makes the intent clear and eliminates the need for break  
+statements, reducing common programming errors.  
 
 Switch expressions evaluate each case in order until a match is found, then  
 return the corresponding value. If no case matches, the default case is  
@@ -20,8 +20,8 @@ complex matching logic.
 
 ## Matching string literals 
 
-String matching is one of the most common uses of switch expressions, providing  
-clean alternatives to multiple string comparisons.  
+String matching is one of the most common uses of switch expressions,  
+providing clean alternatives to multiple string comparisons.  
 
 ```groovy
 def res = System.console().readLine 'What is the capital of Slovakia?: '
@@ -38,8 +38,8 @@ println msg
 
 This example demonstrates basic string literal matching. The switch expression  
 compares the input string against literal values and returns the corresponding  
-result. The default case handles any non-matching input, ensuring the expression  
-always returns a value.
+result. The default case handles any non-matching input, ensuring the  
+expression always returns a value.
 
 ## Matching integers 
 
@@ -74,9 +74,9 @@ println "your option: $res"
 ```
 
 This example shows how integer values can be matched directly in switch  
-expressions. The input string is converted to an integer using the `as` operator,  
-and each case handles a specific menu option. The default case provides  
-error handling for invalid menu choices.
+expressions. The input string is converted to an integer using the `as`  
+operator, and each case handles a specific menu option. The default case  
+provides error handling for invalid menu choices.
 
 ## Matching types 
 
@@ -101,9 +101,10 @@ for (e in data) {
 }
 ```
 
-Type matching compares the runtime type of the expression against class objects.  
-This is particularly useful when processing collections containing mixed types,  
-enabling type-safe operations and appropriate handling based on object type.
+Type matching compares the runtime type of the expression against class  
+objects. This is particularly useful when processing collections containing  
+mixed types, enabling type-safe operations and appropriate handling based  
+on object type.
 
 ## Multiple options 
 
@@ -771,7 +772,8 @@ def dates = [
 
 for (dt in dates) {
     def schedule = getSchedule(dt)
-    def formatted = dt.format(DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy 'at' h:mm a"))
+    def formatter = DateTimeFormatter.ofPattern("EEEE, MMMM d, yyyy 'at' h:mm a")
+    def formatted = dt.format(formatter)
     println "${formatted}: ${schedule}"
 }
 ```
